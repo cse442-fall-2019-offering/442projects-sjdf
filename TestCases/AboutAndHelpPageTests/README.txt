@@ -1,0 +1,1 @@
+This folder contains all tests for the about and help page.
