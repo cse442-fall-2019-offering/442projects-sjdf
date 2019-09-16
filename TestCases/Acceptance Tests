@@ -1,0 +1,73 @@
+Story 1:
+Test Case Name: ValidInput
+Test Case Description: Test the search functionality of the application to ensure the user can put in an amount of money in the respective place in the search bar
+TestStepNo:
+Precondition: A). Ensure the application under test is available and stable to test. B) Ensure the required test data for testing is available and complete
+Step 1: Launch the application with the given URL
+Step 2: Locate the the search bar on the page
+Step 3: Enter a valid amount of money in the respective field on the search bar 
+Expected Results:
+Step 1: The application should launch successfully and all the data should be loaded correctly
+Step 2: The search bar should be on the right hand side of the page regardless of where on the page you are
+Step 3: The money input field should be editable and should accept input
+Actual Results: N/A
+Status: (Pass/Fail)
+
+Story 2:
+Test Case Name: EasyToFindHelp
+Test Case Description: Test the helpfulness and difficulty of locating the Help and About section of the site
+TestStepNo:
+Precondition: A). Ensure the application under test is available and stable to test. B) Ensure the required test data for testing is available and complete
+Step 1: Launch the application with the given URL
+Step 2: Successfully locate the Help and About section on the page
+Step 3: Understand the information in the specific section
+Expected Results:
+Step 1: The application should launch successfully and all the data should be loaded correctly
+Step 2: The section should be noticeable and easy to find on the page
+Step 3: The user should have a clear understanding about the site and how to use it after reading
+Actual Results: N/A
+Status: (Pass/Fail)
+
+Story 3: 
+Test Case Name: Seeing near notable locations
+Test Case Description: Test the tourist location functionality to ensure the user, once has chosen a hotel to stay at, can see notable locations near the hotel they are staying at. 
+TestStepNo:
+Precondition: A). Ensure the application under test is available and stable to test. B) Ensure the required test data for testing is available and complete C) Ensure the search bar functionally works and they have selected a hotel
+Step 1: 
+Step 2: 
+Step 3: 
+Expected Results:
+Step 1: 
+Step 2: 
+Step 3: 
+Actual Results: N/A
+Status: (Pass/Fail)
+
+Story 4: 
+Test Case Name: Displayed Hotels
+Test Case Description: Test the hotel options functionally to ensure the user can see a list of available hotels in the area they choose and all the amenities the hotel offers 
+TestStepNo:
+Precondition: A). Ensure the application under test is available and stable to test. B) Ensure the required test data for testing is available and complete C) Ensure the search bar functionally works and they have entered valid input
+Step 1: 
+Step 2: 
+Step 3: 
+Expected Results:
+Step 1: 
+Step 2: 
+Step 3: 
+Actual Results: N/A
+Status: (Pass/Fail)
+Story 5: 
+Test Case Name: Check Displayed Flights
+Test Case Description: Test that once the user has entered their input they should be able to see available flights with the price, destination, and time as well as pictures of the locations
+TestStepNo:
+Precondition: A). Ensure the application under test is available and stable to test. B) Ensure the required test data for testing is available and complete C) Ensure the search bar functionally works
+Step 1: 
+Step 2: 
+Step 3: 
+Expected Results:
+Step 1: 
+Step 2: 
+Step 3: 
+Actual Results: N/A
+Status: (Pass/Fail)
