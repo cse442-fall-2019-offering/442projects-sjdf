@@ -1,0 +1,1 @@
+This folder contains all drivers for windows 10. Includes firefox, edge and chrome webdrivers.
