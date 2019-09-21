@@ -24,17 +24,15 @@
 
 					<!-- This form is to collect the user's travel data on the website -->
 					<form action="/action_page.php">
-						<br> Set your location <br>
-						<!-- This holds the country location -->
-  						<input type="text" name="countrylocation" value="Hogwarts">
-						<div class="dropdown">
-  							<button class="dropbtn">Dropdown</button>
-  							<div class="dropdown-content">
-    						<a href="#US">United States of America</a>
-    						<a href="#Canada">Canada</a>
-    						<a href="#France">France</a>
-  							</div>
-						</div>
+						<br> Set your location: <br>
+						<!-- This holds the country location and is the dropdown menu-->
+						<input list="dropdown" type="text">
+						<datalist id="dropdown">
+							<option value="United States of America"></option>
+							<option value="Canada"></option>
+							<option value="France"></option>
+						</datalist>
+
   						<br> What's the highest price you'll pay for?<br>
 						<!-- This holds the highest price the user is willing to pay -->
   						<input type="number" name="highest price" value="99.99">
@@ -44,9 +42,11 @@
   						<br> What are you're travel dates?<br>
 						<!-- This holds the travel dates -->
   						<br>Start date:<br>
-  						<input type="date" >
+  						<input type="date" name="startdate">
   						<br> End date: <br>
-  						<input type="date" value=">
+  						<input type="date" name="enddate">
+						<br><br>
+						<input type="submit" value="Submit">
 						</form>
 				</header>
 				<nav id="nav">
