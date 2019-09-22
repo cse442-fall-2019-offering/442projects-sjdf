@@ -1,0 +1,1 @@
+This folder contains all test for the Tourism page.
