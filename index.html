@@ -17,11 +17,37 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+					<!--<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span> -->
 					<h1 id="logo"><a href="index.html">Hermes</a></h1>
 					<p>Plan you ideal vacation with<br />
 					your ideal budget. <br />
-					Or whatever cheesy caption goes here. </p>
+
+					<!-- This form is to collect the user's travel data on the website -->
+					<form action="/action_page.php">
+						<br> Set your location: <br>
+						<!-- This holds the country location and is the dropdown menu-->
+						<input list="dropdown" type="text">
+						<datalist id="dropdown">
+							<option value="United States of America"></option>
+							<option value="Canada"></option>
+							<option value="France"></option>
+						</datalist>
+
+  						<br> What's the highest price you'll pay for?<br>
+						<!-- This holds the highest price the user is willing to pay -->
+  						<input type="number" name="highest price" value="99.99">
+						<br> And currency? <br>
+						<!-- This holds the type of currency they want to use -->
+						<input type="text" name="currency" value="US Dollars">
+  						<br> What are you're travel dates?<br>
+						<!-- This holds the travel dates -->
+  						<br>Start date:<br>
+  						<input type="date" name="startdate">
+  						<br> End date: <br>
+  						<input type="date" name="enddate">
+						<br><br>
+						<input type="button" value="Submit" onclick="location.href='flights.html'">
+						</form>
 				</header>
 				<nav id="nav">
 					<ul>
@@ -34,11 +60,7 @@
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<a href = "help.html" <i class="fa fa-question-circle" aria-hidden="true"></i> </a>
 					</ul>
 				</footer>
 			</section>
@@ -49,22 +71,35 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- One -->
+						<!-- About Page -->
 							<section id="aboutHermes">
 								<div class="image main" data-position="center">
 									<img src="images/banner.jpg" alt="" />
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>Read Only</h2>
-										<p>Just an incredibly simple responsive site<br />
-										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
+										<h2>Welcome to Hermes!</h2>
+										<p>Are you ready to plan you ideal vacation with
+											your ideal budget?</p>
 									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+									<p> Hermes is an easy-to-use travel planner, that gives you travelling options that best fit your budget.
+										Hermes was created in order to allow people to find a vacation that best suits them with the price tag
+										they are looking for. So whether you are planning a family vacation or a romantic weekend getaway, Hermes
+										is the perfect place for you! With our hassle free search engine, there's no need to look across multiple
+										websites in order to plan out your trip within the price range of your choosing.
+									</p>
+									<p>
+										If at any time you are confused on how to use our website, simply click the question icon on the right
+										column at the bottom and you'll be redirected to our help page. For now, sit back and relax and go ahead and start by entering your
+										budget, travel dates, and point of departure on the right hand side. Happy vacationing!
+									</p>
 								</div>
 							</section>
 
 					</div>
+				<!-- Search bar and Dropdown box-->
+
+
 
 				<!-- Footer -->
 					<section id="footer">
@@ -85,6 +120,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery-ui.js"></script>
 
 	</body>
 </html>
