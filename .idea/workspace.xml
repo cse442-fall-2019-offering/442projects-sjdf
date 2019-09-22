@@ -71,7 +71,7 @@
       <workItem from="1568839692742" duration="4433000" />
       <workItem from="1568913746702" duration="4574000" />
       <workItem from="1568989172681" duration="2687000" />
-      <workItem from="1569163322356" duration="1128000" />
+      <workItem from="1569163322356" duration="1845000" />
     </task>
     <task id="LOCAL-00001" summary="Modifed the html page to show locations with their name, picture, and how far they are from the given hotel in miles">
       <created>1568925201764</created>
@@ -87,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568999250906</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Edited not needed contract me and highlighted the correct area on the side bar">
+      <created>1569164594296</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569164594296</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +116,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modifed the html page to show locations with their name, picture, and how far they are from the given hotel in miles" />
     <MESSAGE value="Put stars that show the rating of each location shown" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put stars that show the rating of each location shown" />
+    <MESSAGE value="Edited not needed contract me and highlighted the correct area on the side bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited not needed contract me and highlighted the correct area on the side bar" />
   </component>
 </project>
