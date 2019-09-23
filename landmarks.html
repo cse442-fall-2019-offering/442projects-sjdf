@@ -7,6 +7,12 @@
 -->
 <html>
 	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			.checked{
+				color: orangered;
+			}
+		</style>
 		<title>Hermes</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -17,119 +23,111 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+					<!--<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span> -->
 					<h1 id="logo"><a href="index.html">Hermes</a></h1>
 					<p>Plan you ideal vacation with<br />
 					your ideal budget. <br />
-					Or whatever cheesy caption goes here. </p>
+
+					<!-- This form is to collect the user's travel data on the website -->
+					<form action="/action_page.php">
+						<br> Set your location: <br>
+						<!-- This holds the country location and is the dropdown menu-->
+						<input list="dropdown" type="text">
+						<datalist id="dropdown">
+							<option value="United States of America"></option>
+							<option value="Canada"></option>
+							<option value="France"></option>
+						</datalist>
+
+  						<br> What's the highest price you'll pay for?<br>
+						<!-- This holds the highest price the user is willing to pay -->
+  						<input type="number" name="highest price" value="99.99">
+						<br> And currency? <br>
+						<!-- This holds the type of currency they want to use -->
+						<input type="text" name="currency" value="US Dollars">
+  						<br> What are you're travel dates?<br>
+						<!-- This holds the travel dates -->
+  						<br>Start date:<br>
+  						<input type="date" name="startdate">
+  						<br> End date: <br>
+  						<input type="date" name="enddate">
+						<br><br>
+						<input type="button" value="Submit" onclick="location.href='flights.html'">
+						</form>
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="flights.html" class="active">Where Can I Go?</a></li>
-						<li><a href="landmarks.html">What Can I Do?</a></li>
+						<li><a href="flights.html">Where Can I Go?</a></li>
 						<li><a href="hotels.html">Where Can I Stay?</a></li>
-						<li><a href="template.html">TEMPLATE [Internal] </a></li>
+						<li><a href="landmarks.html" class = "active">What Can I Do?</a></li>
+						<!--<li><a href="template.html">TEMPLATE [Internal] </a></li>-->
 						<!-- <li><a href="#four">Pla</a></li> -->
 					</ul>
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<a href = "help.html" <i class="fa fa-question-circle" aria-hidden="true"></i> </a>
 					</ul>
 				</footer>
 			</section>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/banner.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Read Only</h2>
-										<p>Just an incredibly simple responsive site<br />
-										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
-									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code">Write all the code</li>
-										<li class="icon solid fa-cubes">Stack small boxes</li>
-										<li class="icon solid fa-book">Read books and stuff</li>
-										<li class="icon solid fa-coffee">Drink much coffee</li>
-										<li class="icon solid fa-bolt">Lightning bolt</li>
-										<li class="icon solid fa-users">Shadow clone technique</li>
-									</ul>
-								</div>
-							</section>
-
+				<section id="one">
+					<div class="container">
+						<header class="major">
+							<h2>A Few Places to Visit</h2>
+							<p text-align="center">These our personal recommendations of locations near your picked hotel. Learn, explore, and eat to your hearts content!</p>
+						</header>
+					</div>
+				</section>
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
-									<h3>A Few Accomplishments</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
 									<div class="features">
 										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="http://www.nyhabitat.com/blog/wp-content/uploads/2013/12/harry-potter-london-book-movie-location-platform-kings-cross-station.jpg" alt="" /></a>
 											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Platform 9 3/4</h4>
+												<p>A train station that hides away the Hogwarts express from muggles. Don't let them see you go through the wall!</p>
+												<p>1.3 miles away</p>
+												<p>Rates from our users</p>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star"></span>
+												<span class="fa fa-star"></span>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="https://mypersonalmultiverse.files.wordpress.com/2014/06/03_digaon-alley.jpg" alt="" /></a>
 											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Diagon Alley</h4>
+												<p>A popular shopping area where you can purchase a wand designed for you and a variety of animals.</p>
+												<p>2.5 miles away</p>
+												<p>Rates from our users</p>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star"></span>
 											</div>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="https://jagclubblog.files.wordpress.com/2013/03/hogwarts.jpg" alt="" /></a>
 											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Hogwarts</h4>
+												<p>The famous wizarding school that has produce some of greatest wizards in history. They're currently hiring for someone to teach Defense Against the Darks Arts.</p>
+												<p>5.6 miles away</p>
+												<p>Rates from our users</p>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
+												<span class="fa fa-star checked"></span>
 											</div>
 										</article>
 									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
 								</div>
 							</section>
 
@@ -470,7 +468,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; SJDF 2019</li><li>CSE 442: Software Engineering</a></li>
 							</ul>
 						</div>
 					</section>
