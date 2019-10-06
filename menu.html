@@ -5,7 +5,7 @@
   your ideal budget. <br />
 
   <!-- This form is to collect the user's travel data on the website -->
-  <form action="/action_page.php">
+  <form action="/action_page.php" onsubmit="return noInvalidDate()">
     <br> Set your location: <br>
     <!-- This holds the country location and is the dropdown menu-->
     <input list="dropdown" type="text">
@@ -24,11 +24,11 @@
       <br> What are you're travel dates?<br>
     <!-- This holds the travel dates -->
       <br>Start date:<br>
-      <input type="date" name="startdate">
+      <input type="date" id="startdate">
       <br> End date: <br>
-      <input type="date" name="enddate">
+      <input type="date" id="enddate">
     <br><br>
-    <input type="button" value="Submit" onclick="location.href='flights.html'">
+    <input type="submit" value="Submit" formaction="flights.html">
     </form>
 </header>
 <nav id="nav">

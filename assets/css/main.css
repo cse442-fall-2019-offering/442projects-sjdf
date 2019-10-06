@@ -1816,6 +1816,8 @@ input, select, textarea {
 	}
 
 	input[type="text"],
+	input[type="number"],
+    input[type="date"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -1875,6 +1877,8 @@ input, select, textarea {
 		}
 
 	input[type="text"],
+	input[type="number"],
+    input[type="date"],
 	input[type="password"],
 	input[type="email"],
 	select {

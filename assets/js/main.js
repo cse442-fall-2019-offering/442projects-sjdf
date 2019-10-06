@@ -4,6 +4,46 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+function noInvalidDate(){
+// NOTE: You need to implement this function on all of the pages
+   var d = document.getElementById("startdate").value; //has the start date
+   var d2 = document.getElementById("enddate").value; //has the end date
+   var startdate = new Date(d);
+   var enddate = new Date(d2);
+   var today = new Date(); //gets the current date
+
+   var todayyear = today.getFullYear(); // gets the year part of today's date
+   var todaymonth = today.getMonth(); // gets the month part of today's date
+   var todayday = today.getDate(); // gets the day of today
+
+   var startyear = startdate.getFullYear(); // gets the year of the start date
+   var startmonth = startdate.getMonth(); // gets the month of the start date
+   var startday = startdate.getDate(); // gets the day of the start date
+
+   var endyear = enddate.getFullYear(); // gets the year of the end date
+   var endmonth = enddate.getMonth(); // gets the month of the end date
+   var endday = enddate.getDate(); // gets the day of the end date
+
+   if((startyear < todayyear) || (endyear < todayyear)){
+       alert("You can't put a date that has already passed.");
+       return false;
+   } else if((startyear === todayyear)&&(startmonth < todaymonth)){
+       alert("The start date has already passed.");
+       return false;
+   } else if((endyear === todayyear)&&(endmonth < todaymonth)){
+       alert("The end date has already passed.");
+       return false;
+   } else if((startyear === todayyear) && (startmonth === todaymonth) && (startday < todayday)){
+       alert("The start date has already passed.");
+       return false;
+   } else if((endyear === todayyear)&&(endmonth === todaymonth) && (endday < todayday)){
+       alert("The end date has already passed.");
+       return false;
+   } else if((endyear < startyear) || ((endyear === startyear) && (endmonth < startmonth)) || ((endyear === startyear) && (startmonth === endmonth) &&(endday < startday))){
+       alert("The end date can't be before the start date");
+       return false;
+   } else {}
+}
 
 (function($) {
 
