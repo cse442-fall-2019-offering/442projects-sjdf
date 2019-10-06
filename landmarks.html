@@ -21,8 +21,7 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<section id="header">
-				<header>
+			<section id="header"><header>
 					<!--<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span> -->
 					<h1 id="logo"><a href="index.html">Hermes</a></h1>
 					<p>Plan you ideal vacation with<br />
@@ -483,6 +482,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				var init = function() {
+					 $("#header").load("menu.html", function(){
+							var navbar = document.getElementById("nav").childNodes[1].children;
+		 					var v = navbar[2].firstChild;
+							v.className = "active";
+					 });
+				}
+				$(document).ready(init);
+			</script>
 	</body>
 </html>
