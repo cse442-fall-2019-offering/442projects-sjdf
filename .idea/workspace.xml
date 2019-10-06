@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569177240772</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed another merge conflict between issue 31 and userstory 29">
+      <created>1570382010428</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570382010428</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +93,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed Various Bugs&#10;- Fixed copyright message for consistency&#10;- Made sidebar consistent&#10;- Changed a bad html link&#10;- Fixed page highlighted on sidebar&#10;- Deleted banner image&#10;- Updated icons" />
     <MESSAGE value="Fixed super minor typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed super minor typo" />
+    <MESSAGE value="Fixed another merge conflict between issue 31 and userstory 29" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed another merge conflict between issue 31 and userstory 29" />
   </component>
 </project>
