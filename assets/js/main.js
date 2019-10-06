@@ -8,7 +8,7 @@ function noInvalidDate(){
 // NOTE: You need to implement this function on all of the pages
    var d = document.getElementById("startdate").value; //has the start date
    var d2 = document.getElementById("enddate").value; //has the end date
-   var message, price, curr, location;
+   var price, curr, location;
    var startdate = new Date(d), enddate = new Date(d2), today = new Date(); //gets the current date
 
    var todayyear = today.getFullYear(), todaymonth = today.getMonth(), todayday = today.getDate(); // gets the day of today
@@ -24,19 +24,19 @@ function noInvalidDate(){
    if((startyear < todayyear) || (endyear < todayyear)){
        alert("You can't put a date that has already passed.");
        return false;
-   } else if((startyear === todayyear)&&(startmonth < todaymonth)){
+   } if((startyear === todayyear)&&(startmonth < todaymonth)){
        alert("The start date has already passed.");
        return false;
-   } else if((endyear === todayyear)&&(endmonth < todaymonth)){
+   } if((endyear === todayyear)&&(endmonth < todaymonth)){
        alert("The end date has already passed.");
        return false;
-   } else if((startyear === todayyear) && (startmonth === todaymonth) && (startday < todayday)){
+   } if((startyear === todayyear) && (startmonth === todaymonth) && (startday < todayday)){
        alert("The start date has already passed.");
        return false;
-   } else if((endyear === todayyear)&&(endmonth === todaymonth) && (endday < todayday)){
+   } if((endyear === todayyear)&&(endmonth === todaymonth) && (endday < todayday)){
        alert("The end date has already passed.");
        return false;
-   } else if((endyear < startyear) || ((endyear === startyear) && (endmonth < startmonth)) || ((endyear === startyear) && (startmonth === endmonth) &&(endday < startday))){
+   } if((endyear < startyear) || ((endyear === startyear) && (endmonth < startmonth)) || ((endyear === startyear) && (startmonth === endmonth) &&(endday < startday))){
        alert("The end date can't be before the start date");
        return false;
    }
@@ -54,12 +54,7 @@ function noInvalidDate(){
    	alert("No input for price.");
    	return false;
    }
-   if (d1 == "" || d2 == ""){
-   	alert("No dates picked");
-   	document.getElementById("startdate").value = "";
-   	document.getElementById("enddate").value = "";
-	return false;
-   }
+
    switch(location){
             case "France":
                break;
@@ -76,6 +71,16 @@ function noInvalidDate(){
    alert("Only US currency accepted.");
    document.getElementById("currency").value = "US Dollars";
    return false;
+   }
+
+   if (d == ""){
+   	alert("No starting date picked.");
+	return false;
+   }
+
+   if(d2 == ""){
+   	alert("No ending date picked.");
+   	return false;
    }
 
    else {}
