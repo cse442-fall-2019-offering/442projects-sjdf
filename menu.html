@@ -8,7 +8,7 @@
   <form action="/action_page.php" onsubmit="return noInvalidDate()">
     <br> Set your location: <br>
     <!-- This holds the country location and is the dropdown menu-->
-    <input list="dropdown" type="text" id="current_location">
+    <input list="dropdown" type="text" id="current_location" maxlength ="60">
     <datalist id="dropdown">
       <option value="United States of America"></option>
       <option value="Canada"></option>
@@ -20,7 +20,7 @@
       <input type="number" id="highest_price">
     <br> And currency? <br>
     <!-- This holds the type of currency they want to use -->
-    <input type="text" id="currency" value="US Dollars">
+    <input type="text" id="currency" value="US Dollars" maxlength = "20">
       <br> What are you're travel dates?<br>
     <!-- This holds the travel dates -->
       <br>Start date:<br>

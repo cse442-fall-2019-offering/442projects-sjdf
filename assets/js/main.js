@@ -20,7 +20,6 @@ function noInvalidDate(){
 	location = document.getElementById("current_location").value;
 	curr = document.getElementById("currency").value;
 
-
    if((startyear < todayyear) || (endyear < todayyear)){
        alert("You can't put a date that has already passed.");
        return false;
