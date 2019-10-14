@@ -8,6 +8,8 @@ function noInvalidDate(){
 // NOTE: You need to implement this function on all of the pages
    var d = document.getElementById("startdate").value; //has the start date
    var d2 = document.getElementById("enddate").value; //has the end date
+	localStorage.setItem("start_date", String(new Date(d)));
+	localStorage.setItem("end_date", String(new Date(d2)));
    var price, curr, location;
    var startdate = new Date(d), enddate = new Date(d2), today = new Date(); //gets the current date
 
@@ -19,7 +21,9 @@ function noInvalidDate(){
 	price = document.getElementById("highest_price").value;
 	location = document.getElementById("current_location").value;
 	curr = document.getElementById("currency").value;
-
+	localStorage.setItem("current_price", String(price));//store the picked choices into local storage
+	localStorage.setItem("picked_location", String(location));
+	localStorage.setItem("curr_picked", String(curr));
 
    if((startyear < todayyear) || (endyear < todayyear)){
        alert("You can't put a date that has already passed.");

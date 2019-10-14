@@ -124,8 +124,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				var init = function() {
-					 $("#header").load("menu.html", function(){
+					 $("#header").load("staticVars.html", function(){
 							var navbar = document.getElementById("nav").childNodes[1].children;
+							$.get(index.html);
 		 					var v = navbar[0].firstChild;
 							v.className = "active";
 					 });

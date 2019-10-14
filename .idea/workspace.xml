@@ -4,16 +4,28 @@
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/flights.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/landmarks.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task#32_Split_Navbar" />
+        <entry key="$PROJECT_DIR$" value="userStory#29_Testing_And_Sec" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,8 +37,11 @@
       </set>
     </option>
   </component>
+  <component name="ProjectId" id="1Rt8E2o4XoPLpUOvwHdPbBOuTXQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,7 +93,24 @@
       <option name="project" value="LOCAL" />
       <updated>1570382350493</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed variable name problem within main.js so date checks work">
+      <created>1570383709689</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570383709689</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="" />
+      <created>1570474928577</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570474928577</updated>
+      <workItem from="1570474953157" duration="14211000" />
+      <workItem from="1570730678765" duration="416000" />
+      <workItem from="1570817660747" duration="247000" />
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +134,7 @@
     <MESSAGE value="Fixed super minor typo" />
     <MESSAGE value="Fixed another merge conflict between issue 31 and userstory 29" />
     <MESSAGE value="Added fixes to menu.html that were unmerged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fixes to menu.html that were unmerged" />
+    <MESSAGE value="fixed variable name problem within main.js so date checks work" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed variable name problem within main.js so date checks work" />
   </component>
 </project>
