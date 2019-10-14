@@ -1,0 +1,39 @@
+<header>
+   <h1 id="logo"><a href="index.html">Hermes</a></h1>
+   <br>Plan you ideal vacation with<br />
+   your ideal budget. <br />
+    <br>Location:</br>
+       <div id="loc"></div>
+    <br>Your Price:<br>
+        <div id="price"></div>
+    <br>Currency:<br>
+        <div id="curr"></div>
+    <br>Departing Date:<br>
+        <div id="s_date"></div>
+    <br>Returning Date:<br>
+        <div id="e_date"></div>
+
+</header>
+
+<script>
+    document.getElementById("loc").innerHTML = localStorage.getItem("picked_location");
+    document.getElementById("price").innerHTML = localStorage.getItem("current_price");
+     document.getElementById("curr").innerHTML = localStorage.getItem("curr_picked");
+     document.getElementById("s_date").innerHTML = localStorage.getItem("start_date");
+    document.getElementById("e_date").innerHTML = localStorage.getItem("end_date")
+</script>
+
+<nav id="nav">
+  <ul>
+    <li><a href="flights.html">Where Can I Go?</a></li>
+    <li><a href="hotels.html">Where Can I Stay?</a></li>
+    <li><a href="landmarks.html">What Can I Do?</a></li>
+    <!--<li><a href="template.html">TEMPLATE [Internal] </a></li>-->
+    <!-- <li><a href="#four">Pla</a></li> -->
+  </ul>
+</nav>
+<footer>
+  <ul class="icons">
+    <a href = "help.html" <i class="fa fa-question-circle" aria-hidden="true"></i> </a>
+  </ul>
+</footer>
