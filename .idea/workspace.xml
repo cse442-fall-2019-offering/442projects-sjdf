@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/landmarks.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,10 +11,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task#32_Split_Navbar" />
+        <entry key="$PROJECT_DIR$" value="userStory#29_Testing_And_Sec" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,9 +34,11 @@
       </set>
     </option>
   </component>
-  <component name="ProjectId" id="1Rt8NSMxQTMUEcLWWdsrWvFfTMS" />
+  <component name="ProjectId" id="1Rt8E2o4XoPLpUOvwHdPbBOuTXQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,14 +90,46 @@
       <option name="project" value="LOCAL" />
       <updated>1570382350493</updated>
     </task>
+    <task id="LOCAL-00005" summary="fixed variable name problem within main.js so date checks work">
+      <created>1570383709689</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570383709689</updated>
+    </task>
     <task active="true" id="Default" summary="Default task">
       <changelist id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="" />
-      <created>1570475009161</created>
+      <created>1570474928577</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570475009161</updated>
+      <updated>1570474928577</updated>
+      <workItem from="1570474953157" duration="14211000" />
+      <workItem from="1570730678765" duration="416000" />
+      <workItem from="1570817660747" duration="247000" />
+      <workItem from="1571063411935" duration="1941000" />
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00006" summary="Created new html that contains information obtain from the index.html/menu.html and is now displayed on other pages and can't be changed by the user.">
+      <created>1571063552567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571063552567</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Correctly added the stativVars.html to document so it can be pushed and seen in git">
+      <created>1571064024018</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571064024018</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed grammar error on menu.html cause it looked stupid">
+      <created>1571079519863</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571079519863</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +153,10 @@
     <MESSAGE value="Fixed super minor typo" />
     <MESSAGE value="Fixed another merge conflict between issue 31 and userstory 29" />
     <MESSAGE value="Added fixes to menu.html that were unmerged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fixes to menu.html that were unmerged" />
+    <MESSAGE value="fixed variable name problem within main.js so date checks work" />
+    <MESSAGE value="Created new html that contains information obtain from the index.html/menu.html and is now displayed on other pages and can't be changed by the user." />
+    <MESSAGE value="Correctly added the stativVars.html to document so it can be pushed and seen in git" />
+    <MESSAGE value="Fixed grammar error on menu.html cause it looked stupid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed grammar error on menu.html cause it looked stupid" />
   </component>
 </project>
