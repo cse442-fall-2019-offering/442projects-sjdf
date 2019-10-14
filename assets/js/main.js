@@ -25,6 +25,7 @@ function noInvalidDate(){
 	localStorage.setItem("picked_location", String(location));
 	localStorage.setItem("curr_picked", String(curr));
 
+
    if((startyear < todayyear) || (endyear < todayyear)){
        alert("You can't put a date that has already passed.");
        return false;
