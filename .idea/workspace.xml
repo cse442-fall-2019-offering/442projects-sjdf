@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/staticVars.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +106,7 @@
       <workItem from="1570474953157" duration="14211000" />
       <workItem from="1570730678765" duration="416000" />
       <workItem from="1570817660747" duration="247000" />
-      <workItem from="1571063411935" duration="533000" />
+      <workItem from="1571063411935" duration="1245000" />
     </task>
     <task id="LOCAL-00006" summary="Created new html that contains information obtain from the index.html/menu.html and is now displayed on other pages and can't be changed by the user.">
       <created>1571063552567</created>
@@ -115,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571063552567</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Correctly added the stativVars.html to document so it can be pushed and seen in git">
+      <created>1571064024018</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571064024018</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +148,7 @@
     <MESSAGE value="Added fixes to menu.html that were unmerged" />
     <MESSAGE value="fixed variable name problem within main.js so date checks work" />
     <MESSAGE value="Created new html that contains information obtain from the index.html/menu.html and is now displayed on other pages and can't be changed by the user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created new html that contains information obtain from the index.html/menu.html and is now displayed on other pages and can't be changed by the user." />
+    <MESSAGE value="Correctly added the stativVars.html to document so it can be pushed and seen in git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correctly added the stativVars.html to document so it can be pushed and seen in git" />
   </component>
 </project>
