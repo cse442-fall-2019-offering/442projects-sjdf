@@ -1,9 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from src.core.flights.flights import HermesFlights
-app = Flask(__name__,template_folder='C:/Users/jafal/PycharmProjects/442projects-sjdf/', static_folder='C:/Users/jafal/PycharmProjects/442projects-sjdf/')
+from src.core.localstorage import LocalStorage
+from selenium import webdriver
+import os
+
+
+def root_dir():
+  return os.path.abspath(os.path.dirname(__file__)).replace('\\', '/')[:-15]
+
+app = Flask(__name__,template_folder=root_dir(), static_folder=root_dir())
 
 @app.route('/')
 def index():
+  print(root_dir()[:-15])
   return render_template('index.html')
 
 @app.route('/get-flights/')
@@ -13,3 +22,7 @@ def my_link():
 
 if __name__ == '__main__':
   app.run(debug=True)
+
+
+def getLocalStorageData():
+  storage = LocalStorage(webdriver.Firefox())
