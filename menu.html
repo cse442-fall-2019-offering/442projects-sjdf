@@ -1,7 +1,7 @@
 <header>
   <!--<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span> -->
   <h1 id="logo"><a href="index.html">Hermes</a></h1>
-  <p>Plan you ideal vacation with<br />
+  <p>Plan your ideal vacation with<br />
   your ideal budget. <br />
 
   <!-- This form is to collect the user's travel data on the website -->
@@ -17,18 +17,22 @@
 
       <br> What's the highest price you'll pay for?<br>
     <!-- This holds the highest price the user is willing to pay -->
-      <input type="number" id="highest_price">
+      <input name="limitNum"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        type = "number"
+        maxlength = "10"
+        id="highest_price">
     <br> And currency? <br>
     <!-- This holds the type of currency they want to use -->
-    <input type="text" id="currency" value="US Dollars">
+    <input type="text" id="currency" value="US Dollars" maxlength ="25">
       <br> What are your travel dates?<br>
     <!-- This holds the travel dates -->
       <br>Start date:<br>
-      <input type="date" id="startdate">
+      <input type="date" id="startdate" min="2019-01-01" max="3000-01-01">
       <br> End date: <br>
       <input type="date" id="enddate">
     <br><br>
-    <input type="submit" value="Submit" formaction="flights.html">
+    <input type="submit" value="Submit" formaction="flights.html" min="2019-01-01" max="3000-01-01">
     </form>
 </header>
 <nav id="nav">
