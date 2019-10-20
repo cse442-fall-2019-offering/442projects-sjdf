@@ -69,8 +69,6 @@
 			<div id="wrapper">
 
 				<!-- Main -->
-					<div id="main">
-
 						<!-- One -->
 							<section id="one">
 								<div class="container">
@@ -81,69 +79,18 @@
 								</div>
 							</section>
 
-						<section>
-							<div class="place-image" align="center">
-							<a href="hotels.html" class="image"><img src="images/place1.png" width=80% alt="" data-position="center center"/></a>
-							</div>
-							<div class="content" align="center">
-									<h2>The Shire, New Zealand</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-							</div>
-
-							<div class ="place-details" align="center">
-									<i class="fas fa-money-bill-wave"> $425</i> <br>
-								    <i class="far fa-clock"> October 22nd 2019 | 7:20AM EST</i> <br>
-									<i class="fas fa-star"> First Class</i>
+						<div id="main">
+							<div id = "mapDiv"></div>
+							<section id="FlightSections">
+								<div class="container">
+									<h1>List of Hotels</h1>
+									<div class="features" id="listOfFlights"></div>
+									<div id="listButtons" style="height:25px"></div>
+								</div>
+							</section>
+						</div>
 
 
-							</div>
-							<div class="place-button" align = "center">
-										<lu><a href="hotels.html" class="button">Select</a></lu>
-							</div>
-							<br>
-						</section>
-
-						<section>
-							<div class="place-image" align="center">
-							<a href="hotels.html" class="image"><img src="images/place2.png" alt="" width=50% data-position="center center"/></a>
-							</div>
-							<div class="content" align="center">
-									<h2>USA, New York City</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-							</div>
-
-							<div class ="place-details" align="center">
-									<i class="fas fa-money-bill-wave"> $125</i> <br>
-								    <i class="far fa-clock"> October 30th 2019 | 1:55PM EST</i> <br>
-									<i class="fas fa-star"> Economy</i>
-
-
-							</div>
-							<div class="place-button" align = "center">
-										<lu><a href="hotels.html" class="button">Select</a></lu>
-							</div>
-							<br>
-						</section>
-
-						<section>
-							<div class="place-image" align="center">
-							<a href="hotels.html" class="image"><img src="images/place3.jpg" alt="" width=50% data-position="center center"/></a>
-							</div>
-							<div class="content" align="center">
-									<h2>Italy, Lake Cuomo</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-							</div>
-
-							<div class ="place-details" align="center" >
-									<i class="fas fa-money-bill-wave"> $625</i> <br>
-								    <i class="far fa-clock"> September 22nd 2019 | 9:12AM EST</i> <br>
-									<i class="fas fa-star"> First Class</i>
-							</div>
-							<div class="place-button" align = "center">
-										<lu><a href="hotels.html" class="button">Select</a></lu>
-							</div>
- 							<br>
-						</section>
 						<div class="next-prev-arrows" align="center">
 						<a href="" class="previous">&laquo; Previous</a>
 						<a href="" class="next">Next &raquo;</a>
@@ -170,6 +117,102 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";
+				var FlightList = JSON.parse(json).hotelList;
+				var listLocation = document.getElementById("listOfFlights");
+				var setCounter = 0;
+				spawnList(setCounter);
+				if(FlightList.length>10){
+					var nextButton = document.createElement("button");
+					nextButton.innerHTML = "next";
+					nextButton.onclick = nextButtonIsClicked;
+					nextButton.className = "button primary fit";
+					nextButton.style = "width:50%;height:100%;";
+					var container = document.getElementById("listButtons");
+					container.appendChild(nextButton);
+				}
+				function spawnList(start){
+					for(var i = start;i<(start+10);i++){
+						if(i>(hotelList.length-1)){
+							break;
+						}
+						var article = document.createElement("article");
+						var linkToTourism = document.createElement("a");
+						linkToTourism.href = "hotels.html";
+						article.appendChild(linkToTourism);
+
+						var divInner = document.createElement("div");
+						divInner.class = "inner";
+						divInner.style = "width:100%";
+						linkToTourism.appendChild(divInner);
+						var divGridContainer = document.createElement("div");
+						divGridContainer.class = "grid-item";
+						divGridContainer.style = "display: grid;grid-gap: 10px;grid-template-columns: 50% 50%;";
+						divInner.appendChild(divGridContainer);
+
+						var hotelName = document.createElement("h2");
+						hotelName.innerHTML = FlightList[i].hotelName;
+						divGridContainer.appendChild(hotelName);
+
+						var price = document.createElement("h3");
+						price.innerHTML = FlightList[i].price;
+						price.align = "right";
+						divGridContainer.appendChild(price);
+
+						var address = document.createElement("h3");
+						address.innerHTML = FlightList[i].address;
+						divGridContainer.appendChild(address);
+
+						var amenities = document.createElement("h3");
+						amenities.innerHTML = FlightList[i].amenities;
+						amenities.align = "right";
+						divGridContainer.appendChild(amenities);
+					}
+				}
+
+				function setButtons(){
+					clearDiv("listButtons");
+					var nextButton = document.createElement("button");
+					nextButton.innerHTML = "next";
+					nextButton.onclick = nextButtonIsClicked;
+					nextButton.style = "width:50%;height:100%;";
+					nextButton.className = "button primary fit";
+					var previousButton = document.createElement("button");
+					previousButton.innerHTML = "previous";
+					previousButton.onclick = previousButtonIsClicked;
+					previousButton.style = "width:50%;height:100%;";
+					previousButton.className = "button primary fit";
+					var container = document.getElementById("listButtons");
+					if(setCounter==0){
+						container.appendChild(nextButton);
+					}else if((setCounter+10)>=FlightList.length){
+						container.appendChild(previousButton);
+					}else{
+						container.appendChild(previousButton);
+						container.appendChild(nextButton);
+					}
+				}
+
+				function nextButtonIsClicked() {
+					clearDiv("listOfFlights");
+					setCounter = setCounter+10;
+					spawnList(setCounter);
+					setButtons();
+				}
+				function previousButtonIsClicked() {
+					clearDiv("listOfFlights");
+					setCounter = setCounter-10;
+					spawnList(setCounter);
+					setButtons();
+				}
+				function clearDiv(id){
+					var target = document.getElementById(id);
+					while (target.firstChild) {
+    				target.firstChild.remove();
+					}
+				}
+			</script>
 
 	</body>
 </html>
