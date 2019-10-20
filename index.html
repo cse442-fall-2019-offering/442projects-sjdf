@@ -10,12 +10,60 @@
 		<title>Hermes</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<section id="header"></section>
+			<section id="header">
+				<header>
+					<!--<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span> -->
+					<h1 id="logo"><a href="index.html">Hermes</a></h1>
+					<p>Plan you ideal vacation with<br />
+					your ideal budget. <br />
+					<!-- This form is to collect the user's travel data on the website -->
+					<form4 action="/action_page.php">
+						<br> Set your location: <br>
+						<!-- This holds the country location and is the dropdown menu-->
+						<input list="dropdown" type="text" id="location">
+						<datalist id="dropdown">
+							<option value="United States of America"></option>
+							<option value="Canada"></option>
+							<option value="France"></option>
+						</datalist>
+
+  						<br> What's the highest price you'll pay for?<br>
+						<!-- This holds the highest price the user is willing to pay -->
+  						<input type="number" name="highest price" value="99.99" id="price">
+						<br> And currency? <br>
+						<!-- This holds the type of currency they want to use -->
+						<input type="text" name="currency" value="US Dollars" id="currencyType">
+  						<br> What are you're travel dates?<br>
+						<!-- This holds the travel dates -->
+  						<br>Start date:<br>
+  						<input type="date" name="startdate" id="startdate">
+  						<br> End date: <br>
+  						<input type="date" name="enddate" id="enddate">
+						<br><br>
+						 <script src="src/js/filterFlights.js"></script>
+							<input type="button" value="Submit" onclick="filterFlights('/get-flights/')">
+						</form4>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="flights.html">Where Can I Go?</a></li>
+						<li><a href="hotels.html">Where Can I Stay?</a></li>
+						<li><a href="landmarks.html">What Can I Do?</a></li>
+						<!--<li><a href="template.html">TEMPLATE [Internal] </a></li>-->
+						<!-- <li><a href="#four">Pla</a></li> -->
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<a href = "help.html" ><i class="fa fa-question-circle" aria-hidden="true"></i> </a>
+					</ul>
+				</footer>
+			</section>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -70,11 +118,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/jquery-ui.js"></script>
-			<script>
-				var init = function() {
-					 $("#header").load("menu.html");
-				}
-				$(document).ready(init);
-			</script>
+
 	</body>
 </html>
