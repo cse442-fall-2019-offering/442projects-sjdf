@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from src.core.flights.flights import HermesFlights
-from src.core.localstorage import LocalStorage
 from selenium import webdriver
 import os
 
