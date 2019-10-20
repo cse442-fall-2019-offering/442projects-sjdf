@@ -22,10 +22,10 @@
 					<p>Plan you ideal vacation with<br />
 					your ideal budget. <br />
 					<!-- This form is to collect the user's travel data on the website -->
-					<form action="/action_page.php">
+					<form4 action="/action_page.php">
 						<br> Set your location: <br>
 						<!-- This holds the country location and is the dropdown menu-->
-						<input list="dropdown" type="text">
+						<input list="dropdown" type="text" id="location">
 						<datalist id="dropdown">
 							<option value="United States of America"></option>
 							<option value="Canada"></option>
@@ -34,19 +34,20 @@
 
   						<br> What's the highest price you'll pay for?<br>
 						<!-- This holds the highest price the user is willing to pay -->
-  						<input type="number" name="highest price" value="99.99">
+  						<input type="number" name="highest price" value="99.99" id="price">
 						<br> And currency? <br>
 						<!-- This holds the type of currency they want to use -->
-						<input type="text" name="currency" value="US Dollars">
+						<input type="text" name="currency" value="US Dollars" id="currencyType">
   						<br> What are you're travel dates?<br>
 						<!-- This holds the travel dates -->
   						<br>Start date:<br>
-  						<input type="date" name="startdate">
+  						<input type="date" name="startdate" id="startdate">
   						<br> End date: <br>
-  						<input type="date" name="enddate">
+  						<input type="date" name="enddate" id="enddate">
 						<br><br>
-						<input type="button" value="Submit" onclick="location.href='/get-flights/'">
-						</form>
+						 <script src="src/js/filterFlights.js"></script>
+							<input type="button" value="Submit" onclick="filterFlights('/get-flights/')">
+						</form4>
 				</header>
 				<nav id="nav">
 					<ul>
@@ -59,7 +60,7 @@
 				</nav>
 				<footer>
 					<ul class="icons">
-						<a href = "help.html" <i class="fa fa-question-circle" aria-hidden="true"></i> </a>
+						<a href = "help.html" ><i class="fa fa-question-circle" aria-hidden="true"></i> </a>
 					</ul>
 				</footer>
 			</section>
