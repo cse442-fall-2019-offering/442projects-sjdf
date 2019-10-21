@@ -1,6 +1,6 @@
 class NavBar:
     location = ""
-    money = 0
+    money = 10
     dates = []
 
     def getLocation(self):
