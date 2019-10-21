@@ -4,6 +4,93 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+function noInvalidDate(){
+// NOTE: You need to implement this function on all of the pages
+   var d = document.getElementById("startdate").value; //has the start date
+   var d2 = document.getElementById("enddate").value; //has the end date
+	localStorage.setItem("start_date", String(new Date(d))); //stores the data to be used on staticVars.html
+	localStorage.setItem("end_date", String(new Date(d2))); //stores the data to be used on staticVars.html
+   var price, curr, location;
+   var startdate = new Date(d), enddate = new Date(d2), today = new Date(); //gets the current date
+
+   var todayyear = today.getFullYear(), todaymonth = today.getMonth(), todayday = today.getDate(); // gets the day of today
+
+   var startyear = startdate.getFullYear(), startmonth = startdate.getMonth(), startday = startdate.getDate(); // gets the day of the start date
+
+   var endyear = enddate.getFullYear(), endmonth = enddate.getMonth(),  endday = enddate.getDate(); // gets the day of the end date
+	price = document.getElementById("highest_price").value;
+	location = document.getElementById("current_location").value;
+	curr = document.getElementById("currency").value;
+	localStorage.setItem("current_price", String(price));//store the picked choices into local storage
+	localStorage.setItem("picked_location", String(location)); //stores the data to be used on staticVars.html
+	localStorage.setItem("curr_picked", String(curr)); //stores the data to be used on staticVars.html
+
+
+	//tests the data give to see if bad data was given and gives alert if so
+   if((startyear < todayyear) || (endyear < todayyear)){
+       alert("You can't put a date that has already passed.");
+       return false;
+   } if((startyear === todayyear)&&(startmonth < todaymonth)){
+       alert("The start date has already passed.");
+       return false;
+   } if((endyear === todayyear)&&(endmonth < todaymonth)){
+       alert("The end date has already passed.");
+       return false;
+   } if((startyear === todayyear) && (startmonth === todaymonth) && (startday < todayday)){
+       alert("The start date has already passed.");
+       return false;
+   } if((endyear === todayyear)&&(endmonth === todaymonth) && (endday < todayday)){
+       alert("The end date has already passed.");
+       return false;
+   } if((endyear < startyear) || ((endyear === startyear) && (endmonth < startmonth)) || ((endyear === startyear) && (startmonth === endmonth) &&(endday < startday))){
+       alert("The end date can't be before the start date");
+       return false;
+   }
+   if(price < 0){
+   	alert("No negative numbers allowed.");
+   	document.getElementById("highest_price").value = "";
+   	return false;
+   }
+   if((isNaN(price))){
+   	alert("Only valid numbers for price.");
+   	document.getElementById("highest_price").value = "";
+   	return false;
+   }
+   if(price == ""){
+   	alert("No input for price.");
+   	return false;
+   }
+
+   switch(location){
+            case "France":
+               break;
+            case "United States of America":
+               break;
+            case "Canada":
+               break;
+            default:
+               alert("Not a valid starting location.");
+               document.getElementById("current_location").value = "";
+               return false;
+}
+   if(curr != "US Dollars"){
+   alert("Only US currency accepted.");
+   document.getElementById("currency").value = "US Dollars";
+   return false;
+   }
+
+   if (d == ""){
+   	alert("No starting date picked.");
+	return false;
+   }
+
+   if(d2 == ""){
+   	alert("No ending date picked.");
+   	return false;
+   }
+
+   else {}
+}
 
 (function($) {
 
