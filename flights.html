@@ -133,9 +133,20 @@
 						divGridContainer.appendChild(price);
 
 						var address = document.createElement("h3");
-						address.innerHTML = "Direct Flight?: " + FlightList[i]["DirectFlight"];
+
+						var directFlight = "Yes";
+						if(FlightList[i]["DirectFlight"] == "True")
+							directFlight = "No";
+
+						address.innerHTML = "Direct Flight? " + directFlight;
 						divGridContainer.appendChild(address);
-						
+
+						var depDate = document.createElement("h3");
+						depDate.innerHTML = "Departure Date: " + FlightList[i]["DepartureDate"];
+						depDate.align = "right";
+						divGridContainer.appendChild(depDate);
+
+						listLocation.appendChild(article);
 					}
 				}
 				//creates next, and previous buttons
