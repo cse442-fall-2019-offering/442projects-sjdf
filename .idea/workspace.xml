@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="Added the street view of some of the places in">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+    <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/flights.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/landmarks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +32,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,7 +64,28 @@
       <option name="project" value="LOCAL" />
       <updated>1569177240772</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added the street view to a number of pages&#10;&#10;Pages:&#10;flights.html&#10;landmarks.html">
+      <created>1571613293464</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571613293464</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added json code to flights.html to get information from the API">
+      <created>1571614425184</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571614425184</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js">
+      <created>1571617730908</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571617730908</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +107,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed Various Bugs&#10;- Fixed copyright message for consistency&#10;- Made sidebar consistent&#10;- Changed a bad html link&#10;- Fixed page highlighted on sidebar&#10;- Deleted banner image&#10;- Updated icons" />
     <MESSAGE value="Fixed super minor typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed super minor typo" />
+    <MESSAGE value="Added the street view to a number of pages&#10;&#10;Pages:&#10;flights.html&#10;landmarks.html" />
+    <MESSAGE value="Added json code to flights.html to get information from the API" />
+    <MESSAGE value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
   </component>
 </project>

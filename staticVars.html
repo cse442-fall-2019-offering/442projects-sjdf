@@ -16,6 +16,7 @@
 </header>
 
 <script>
+    //makes the header ids the values given from index.html but static so people can't change their info midway through
     document.getElementById("loc").innerHTML = localStorage.getItem("picked_location");
     document.getElementById("price").innerHTML = localStorage.getItem("current_price");
      document.getElementById("curr").innerHTML = localStorage.getItem("curr_picked");
