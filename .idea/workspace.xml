@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="Added the street view of some of the places in">
-      <change beforePath="$PROJECT_DIR$/.idea/hermes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hermes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+    <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/flights.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticVars.html" beforeDir="false" afterPath="$PROJECT_DIR$/staticVars.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571614425184</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js">
+      <created>1571617730908</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571617730908</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +109,7 @@
     <MESSAGE value="Fixed super minor typo" />
     <MESSAGE value="Added the street view to a number of pages&#10;&#10;Pages:&#10;flights.html&#10;landmarks.html" />
     <MESSAGE value="Added json code to flights.html to get information from the API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added json code to flights.html to get information from the API" />
+    <MESSAGE value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
   </component>
 </project>

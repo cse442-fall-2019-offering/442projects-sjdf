@@ -71,6 +71,7 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				var init = function() {
+				    //loads header as staticVars
 					 $("#header").load("staticVars.html", function(){
 							var navbar = document.getElementById("nav").childNodes[1].children;
 							$.get(menubar.html);
@@ -83,6 +84,7 @@
 			<script>
 				var json;
 				var FlightList
+                //get values from server as a json
 				var request = new XMLHttpRequest();
 				request.onreadystatechange = function(){
 					if (this.readyState === 4 && this.status === 200){
@@ -91,6 +93,7 @@
 						var listLocation = document.getElementById("listOfFlights");
 				var setCounter = 0;
 				spawnList(setCounter);
+				//generate the lists in increments of 10
 				if(FlightList.length>10){
 					var nextButton = document.createElement("button");
 					nextButton.innerHTML = "next";
@@ -105,6 +108,7 @@
 						if(i>(FlightList.length-1)){
 							break;
 						}
+						//when clicking on the option it causes the user to go to the next html
 						var article = document.createElement("article");
 						var linkToTourism = document.createElement("a");
 						linkToTourism.href = "hotels.html";
@@ -134,7 +138,7 @@
 						
 					}
 				}
-
+				//creates next, and previous buttons
 				function setButtons(){
 					clearDiv("listButtons");
 					var nextButton = document.createElement("button");
@@ -157,7 +161,7 @@
 						container.appendChild(nextButton);
 					}
 				}
-
+                //functions that modifed the page after each button is clicked
 				function nextButtonIsClicked() {
 					clearDiv("listOfFlights");
 					setCounter = setCounter+10;
@@ -178,6 +182,7 @@
 				}
 					}
 				};
+				//gets values from server
 				request.open("GET", '/get-flights/');
     			request.send();
 				// var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";
