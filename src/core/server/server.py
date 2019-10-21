@@ -3,12 +3,23 @@ from src.core.flights.flights import HermesFlights
 from selenium import webdriver
 import os
 
-
+"""
+Author: Javier Falca
+Date modified: 10/20/2019
+Description: Creates a path to html files from the OS directory structure
+Returns: Path to html files
+"""
 def root_dir():
   return os.path.abspath(os.path.dirname(__file__)).replace('\\', '/')[:-15]
 
 app = Flask(__name__,template_folder=root_dir(), static_folder=root_dir())
 
+"""
+Author: Javier Falca
+Date modified: 10/20/2019
+Description: Runs a server framework using flask
+Returns: Static html files
+"""
 @app.route('/')
 def index():
   # print(root_dir()[:-15])

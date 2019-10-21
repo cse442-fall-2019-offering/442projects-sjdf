@@ -2,10 +2,18 @@ from amadeus import Client, ResponseError, Location
 from skyscanner.skyscanner import Flights
 import http.client, json
 
-
+"""
+Author: Javier Falca
+Date modified: 10/20/2019
+Description: SkyScannerAPI Flight Data Class
+"""
 class HermesFlights:
     flights_service = None
-
+    """
+    Author: Javier Falca
+    Date modified: 10/20/2019
+    Description: Creates client for SkyScanner
+    """
     def createClient(self):
         conn = http.client.HTTPSConnection("skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
         payload = "cabinClass=business&children=0&infants=0&country=US&currency=USD&locale=en-US&originPlace=SFO-sky&destinationPlace=LHR-sky&outboundDate=2019-10-20&adults=1"
@@ -19,6 +27,12 @@ class HermesFlights:
         data = res.read()
         # print(data.decode("utf-8"))
 
+    """
+    Author: Javier Falca
+    Date modified: 10/20/2019
+    Description: Uses SkyScanner API to get relevant flight data
+    Returns: JSON file with formatted flight data
+    """
     def getFlightData(self, origin, startDate):
         master = []
         conn = http.client.HTTPSConnection("skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
@@ -37,6 +51,12 @@ class HermesFlights:
            master.append(self.getRelevantFlightInfo(flight, flightID))
         return json.dumps(master)
 
+    """
+    Author: Javier Falca
+    Date modified: 10/20/2019
+    Description: Maps numeric id to name of location
+    Returns: Dictionary with id:country key-val pair
+    """
     def mapIdToLocation(self, data):
         flightID = {}
         for place in data:
@@ -45,6 +65,13 @@ class HermesFlights:
             flightID[placeID] = country
         return flightID
 
+    """
+    Author: Javier Falca
+    Date modified: 10/20/2019
+    Description: Filters out irrelevent information for our project
+    Param: API data and ID of location
+    Returns: Returns dictionary with just the relevant information from flight
+    """
     def getRelevantFlightInfo(self, data, flightID):
         singleFlight = {}
         outboundLeg = data["OutboundLeg"]
@@ -55,6 +82,9 @@ class HermesFlights:
         singleFlight["DirectFlight"] = str(data["Direct"])
         return singleFlight
 
+    """
+    TODO: Given a country, return the appropriate tag to use for SkyScanner
+    """
     def countryToTag(self, country):
         return 0
 
