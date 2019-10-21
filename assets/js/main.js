@@ -8,8 +8,8 @@ function noInvalidDate(){
 // NOTE: You need to implement this function on all of the pages
    var d = document.getElementById("startdate").value; //has the start date
    var d2 = document.getElementById("enddate").value; //has the end date
-	localStorage.setItem("start_date", String(new Date(d)));
-	localStorage.setItem("end_date", String(new Date(d2)));
+	localStorage.setItem("start_date", String(new Date(d))); //stores the data to be used on staticVars.html
+	localStorage.setItem("end_date", String(new Date(d2))); //stores the data to be used on staticVars.html
    var price, curr, location;
    var startdate = new Date(d), enddate = new Date(d2), today = new Date(); //gets the current date
 
@@ -22,10 +22,11 @@ function noInvalidDate(){
 	location = document.getElementById("current_location").value;
 	curr = document.getElementById("currency").value;
 	localStorage.setItem("current_price", String(price));//store the picked choices into local storage
-	localStorage.setItem("picked_location", String(location));
-	localStorage.setItem("curr_picked", String(curr));
+	localStorage.setItem("picked_location", String(location)); //stores the data to be used on staticVars.html
+	localStorage.setItem("curr_picked", String(curr)); //stores the data to be used on staticVars.html
 
 
+	//tests the data give to see if bad data was given and gives alert if so
    if((startyear < todayyear) || (endyear < todayyear)){
        alert("You can't put a date that has already passed.");
        return false;

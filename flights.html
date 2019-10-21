@@ -73,7 +73,7 @@
 				var init = function() {
 					 $("#header").load("staticVars.html", function(){
 							var navbar = document.getElementById("nav").childNodes[1].children;
-							$.get(index.html);
+							$.get(menu.html);
 		 					var v = navbar[0].firstChild;
 							v.className = "active";
 					 });
@@ -135,7 +135,7 @@
 						var address = document.createElement("h3");
 						address.innerHTML = FlightList[i].DirectFlight;
 						divGridContainer.appendChild(address);
-						
+
 					}
 				}
 
