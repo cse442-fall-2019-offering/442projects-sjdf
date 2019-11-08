@@ -12,6 +12,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			#map {
+				height: 30%;
+				width: 30%;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -58,6 +64,58 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				/**
+ 				 * @Author Florebencia Fils-Aime
+ 				 * @Last modified: 11/3/2019
+ 				 * @Description: Use Google Places API for hotels
+ 				 * Place holder hotels are extended stay america hotel buffalo - amherst,
+ 				 * candlewood suites, buffalo, amherst, and doubletree by hilton hotel buffalo
+ 				 * @param
+ 				*/
+				var map;
+				var infowindow = new google.maps.InfoWindow();
+				var center = new google.maps.LatLng(42.9790, 78.7923);
+				function initMap() {
+					map = new google.maps.Map(document.getElementById('map'), {
+						center: {lat: 42.9790, lng: 78.7923},
+						zoom: 8
+					});
+
+					var request = {
+						location = center,
+						radius: 4000,
+						type: ['hotel']
+					};
+
+					var service = new google.maps.places.PlacesService(map);
+
+					service.nearbySearch(request, callback);
+				}
+
+				function callback(results, status){
+					if(status === google.maps.places.PlacesServiceStatus.OK){
+						for(var i = 0; i < results.length; i++){
+							createMarker(results[i]);
+						}
+					}
+				}
+
+				function createMarker(place){
+					var placeLoc = place.geometry.location;
+					var marker = new google.maps.Marker({
+						map: map,
+						position: placeLoc
+					});
+
+					google.maps.event.addListener(marker, 'click', function() {
+          				infowindow.setContent(place.name);
+          				infowindow.open(map, this);
+        			});
+				}
+
+				google.maps.event.addDomListener(infowindow, 'load', initMap);
+			</script>
 			<script>
 				var init = function() {
 					 $("#header").load("staticVars.html", function(){
@@ -125,7 +183,7 @@
 						divGridContainer.appendChild(amenities);
 
 						var mapButton = document.createElement("button");
-						mapButton.onclick = mapButtonOnClick;
+						mapButton.onclick = initMap;
 						mapButton.innerHTML = "MAP";
 						mapButton.className = "button primary";
 						article.appendChild(mapButton);
@@ -181,5 +239,7 @@
 					}
 				}
 			</script>
+			<div id="map"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tSFyIMs47ar_bbqvkE0-epRNZyu7J84&libraries=places&callback=initMap" async defer></script>
 	</body>
 </html>

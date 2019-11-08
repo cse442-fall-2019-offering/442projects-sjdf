@@ -5,10 +5,10 @@
   your ideal budget. <br />
 
   <!-- This form is to collect the user's travel data on the website -->
-  <form action="/action_page.php" onsubmit="return noInvalidDate()">
+  <form id="userform"  name= "userform" action="/userdata" onsubmit="return noInvalidDate()" method="post">
     <br> Set your location: <br>
     <!-- This holds the country location and is the dropdown menu-->
-    <input list="dropdown" type="text" id="current_location" maxlength ="60">
+    <input list="dropdown" type="text" name="location" id="current_location" value = "Canada" maxlength ="60">
     <datalist id="dropdown">
       <option value="United States of America"></option>
       <option value="Canada"></option>
@@ -17,22 +17,22 @@
 
       <br> What's the highest price you'll pay for?<br>
     <!-- This holds the highest price the user is willing to pay -->
-      <input name="limitNum"
+      <input name="price"
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        type = "number"
+        type = "number" value = "200"
         maxlength = "10"
         id="highest_price">
     <br> And currency? <br>
     <!-- This holds the type of currency they want to use -->
-    <input type="text" id="currency" value="US Dollars" maxlength ="25">
+    <input type="text"  name = "curr_type" id="currency" value="US Dollars" maxlength ="25">
       <br> What are your travel dates?<br>
     <!-- This holds the travel dates -->
       <br>Start date:<br>
-      <input type="date" id="startdate" min="2019-01-01" max="3000-01-01">
+      <input type="date" name="start_date" id="startdate" min="2019-01-01" value = "2019-11-09" max="3000-01-01">
       <br> End date: <br>
-      <input type="date" id="enddate">
+      <input type="date" name="end_date" id="enddate"  min="2019-01-01" value = "2019-11-12" max="3000-01-01">
     <br><br>
-    <input type="submit" value="Submit" formaction="flights.html" min="2019-01-01" max="3000-01-01">
+    <input type="submit" value="Submit" formaction="/userdata">
     </form>
 </header>
 <nav id="nav">

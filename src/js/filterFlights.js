@@ -39,3 +39,23 @@ function convertUserInput(param){
 
 }
 
+/**
+ * @Author Florebencia Fils-Aime
+ * @Last modified: 11/3/2019
+ * @Description: Create a JSON string out of the inputs and then do a post
+ * request to that directory with AJAX.
+ * @param
+ */
+//function sendFormDataToServer(){
+//    var formData = JSON.stringify($("#userform").serializeArray());
+//    console.log(formData);
+//    var ajaxrequest = new XMLHttpRequest();
+//    ajaxrequest.onreadystatechange = function(){
+//        if (this.readyState === 4 && this.status === 200){
+//            console.log(this.response);
+//        }
+//    };
+//    ajaxrequest.open("POST", 'flights.html');
+//    ajaxrequest.send(formData);
+//    return true;
+//}

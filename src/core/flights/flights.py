@@ -1,5 +1,3 @@
-from amadeus import Client, ResponseError, Location
-from skyscanner.skyscanner import Flights
 import http.client, json
 
 """
