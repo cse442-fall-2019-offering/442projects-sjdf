@@ -12,6 +12,14 @@
 			.checked{
 				color: orangered;
 			}
+			#map {
+				height: 100%;
+			}
+			 html, body {
+        		height: 100%;
+        		margin: 0;
+        		padding: 0;
+      		}
 		</style>
 		<title>Hermes</title>
 		<meta charset="utf-8" />
@@ -163,5 +171,56 @@
 				}
 				$(document).ready(init);
 			</script>
+	    <div id="map"></div>
+    <script>
+    /**
+      * @Author Florebencia Fils-Aime
+      * @Last modified: 11/11/2019
+      * @Description: Use Google Places API for landmarks
+      * @param
+      */
+      var map;
+      var infowindow;
+      var service;
+      function initMap() {
+      	infowindow = new google.maps.InfoWindow();
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 42.880230, lng: -78.878738},
+          zoom: 15
+        });
+
+        var request = {
+        	location: {lat: 42.880230, lng: -78.878738},
+        	radius: '400',
+        	type: ['game'] };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
+      }
+
+      function callback(results, status){
+      	if(status === google.maps.places.PlacesServiceStatus.OK){
+            for(var i = 0; i < results.length; i++){
+               var place = results[i];
+               createMarker(results[i]);
+             }
+         }
+       }
+
+       function createMarker(place){
+          var placeLoc = place.geometry.location;
+          var marker = new google.maps.Marker({
+              map: map,
+              position: placeLoc
+           });
+
+           google.maps.event.addListener(marker, 'click', function() {
+               infowindow.setContent(place.name);
+               infowindow.open(map, this);
+             });
+ 	}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tSFyIMs47ar_bbqvkE0-epRNZyu7J84&callback=initMap"
+    async defer></script>
 	</body>
 </html>

@@ -12,6 +12,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			#map {
+				height: 100%;
+			}
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -58,6 +68,63 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<div id="map"></div>
+			<script>
+				/**
+             	* @Author Florebencia Fils-Aime
+             	* @Last modified: 11/3/2019
+             	* @Description: Use Google Places API for hotels
+             	* Place holder hotels are extended stay america hotel buffalo - amherst,
+             	* candlewood suites, buffalo, amherst, and doubletree by hilton hotel buffalo
+             	* @param
+            	*/
+            		var map;
+            		var infowindow;
+            		var centerdot;
+            		var service;
+            		function initMap() {
+               			centerdot = new google.maps.LatLng(42.880230, -78.878738);
+               			infowindow = new google.maps.InfoWindow();
+               			map = new google.maps.Map(document.getElementById('map'), {
+                  			center: centerdot, zoom: 15});
+
+               			var request = {
+                  			location: centerdot,
+                  			radius: '4000',
+                  			type: ['hotel']
+               			};
+
+               			service = new google.maps.places.PlacesService(map);
+
+               			service.nearbySearch(request, callback);
+            		}
+
+            		function callback(results, status){
+               			if(status === google.maps.places.PlacesServiceStatus.OK){
+                  			for(var i = 0; i < results.length; i++){
+                  				var place = results[i];
+                     			createMarker(results[i]);
+                  			}
+               			}
+            		}
+
+            		function createMarker(place){
+               			var placeLoc = place.geometry.location;
+               			var marker = new google.maps.Marker({
+                  		map: map,
+                  		position: placeLoc
+               		});
+
+               		google.maps.event.addListener(marker, 'click', function() {
+                    	infowindow.setContent(place.name);
+                    	infowindow.open(map, this);
+                 	});
+            	}
+
+            //google.maps.event.addDomListener(infowindow, 'load', initMap);
+         	</script>
+      		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tSFyIMs47ar_bbqvkE0-epRNZyu7J84&libraries=places&callback=initMap"></script>
+
 			<script>
 				var init = function() {
 					 $("#header").load("staticVars.html", function(){
