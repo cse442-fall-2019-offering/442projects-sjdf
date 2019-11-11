@@ -35,7 +35,7 @@ def index():
 @app.route('/get-flights/')
 def my_link():
     fl = HermesFlights()
-    return fl.getFlightData("BUF-sky", "2019-10-23")
+    return fl.getFlightData()
 
 """
 Author: Florebencia Fils-Aime and Javier Falca

@@ -1,4 +1,4 @@
-import http.client, json
+import http.client, json, csv, requests
 
 """
 Author: Javier Falca
@@ -26,19 +26,40 @@ class HermesFlights:
         # print(data.decode("utf-8"))
 
     """
+            Author: Danny Delannes-Molka
+            Date modified: 11/10/2019
+            Description: Uses SkyScanner API to get relevant flight data
+            Returns: JSON file with formatted flight data
+        """
+
+    def convertLoctionToCode(self, cityName):
+        with open('../../../data/airports.csv', 'rt', encoding="utf8") as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            next(csv_reader)
+            for row in csv_reader:
+                if row['City'] == cityName:
+                    return row['Id'] + "-sky"
+    """
     Author: Javier Falca
     Date modified: 10/20/2019
     Description: Uses SkyScanner API to get relevant flight data
     Returns: JSON file with formatted flight data
     """
-    def getFlightData(self, origin, startDate):
+    def getFlightData(self):
         master = []
+        r = requests.get('http://127.0.0.1:5000/userdata')
+        userdata = json.loads(r.content)
+        origin = self.convertLoctionToCode("Buffalo")
+        # origin = self.convertLoctionToCode(userdata["location"])
+        startDate = userdata["start_date"];
+        currency = "USD";
+        # currency = userdata["currency"];
         conn = http.client.HTTPSConnection("skyscanner-skyscanner-flight-search-v1.p.rapidapi.com")
         headers = {
             'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
             'x-rapidapi-key': "e68920b6ccmshe9f94cc47979710p113539jsn7f754a0867ec"
         }
-        conn.request("GET", "/apiservices/browsequotes/v1.0/US/USD/en-US/" + origin + "/Everywhere/" + startDate,
+        conn.request("GET", "/apiservices/browsequotes/v1.0/US/"+ currency +"/en-US/" + origin + "/Everywhere/" + startDate,
                      headers=headers)
         res = conn.getresponse()
         data = res.read()
@@ -48,7 +69,6 @@ class HermesFlights:
         for flight in json_data["Quotes"]:
            master.append(self.getRelevantFlightInfo(flight, flightID))
         return json.dumps(master)
-
     """
     Author: Javier Falca
     Date modified: 10/20/2019
