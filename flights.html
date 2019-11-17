@@ -41,12 +41,6 @@
 								</div>
 							</section>
 						</div>
-
-
-						<div class="next-prev-arrows" align="center">
-						<a href="" class="previous">&laquo; Previous</a>
-						<a href="" class="next">Next &raquo;</a>
-						</div>
                     </div>
 
 				<!-- Footer -->
@@ -83,7 +77,7 @@
 			</script>
 			<script>
 				var json;
-				var FlightList
+				var FlightList;
                 //get values from server as a json
 				var request = new XMLHttpRequest();
 				request.onreadystatechange = function(){
@@ -93,13 +87,31 @@
 						var listLocation = document.getElementById("listOfFlights");
 				var setCounter = 0;
 				spawnList(setCounter);
+				var switchButton = document.createElement("button");
+				switchButton.innerHTML = "Reverse order of Price";
+				switchButton.style = "width:70%height:100%;";
+				switchButton.onclick = switchButtonisClicked;
+
+				function switchButtonisClicked(){
+					clearDiv("listofFlights");
+					var newList;
+					var temp = 0;
+					for (i = FlightList.length(); i > 0; i--){
+						newList[temp] = FlightList[i];
+						temp++;
+					}
+					FlightList = newList;
+					setCounter = 0;
+					spawnList(setCounter);
+
+				}
 				//generate the lists in increments of 10
 				if(FlightList.length>10){
 					var nextButton = document.createElement("button");
 					nextButton.innerHTML = "next";
 					nextButton.onclick = nextButtonIsClicked;
 					nextButton.className = "button primary fit";
-					nextButton.style = "width:50%;height:100%;";
+					nextButton.style = "width:70%;height:100%;";
 					var container = document.getElementById("listButtons");
 					container.appendChild(nextButton);
 				}
@@ -134,6 +146,7 @@
 
 						var address = document.createElement("h3");
 
+
 						var directFlight = "Yes";
 						if(FlightList[i]["DirectFlight"] == "True")
 							directFlight = "No";
@@ -160,7 +173,7 @@
 					var previousButton = document.createElement("button");
 					previousButton.innerHTML = "previous";
 					previousButton.onclick = previousButtonIsClicked;
-					previousButton.style = "width:50%;height:100%;";
+					previousButton.style = "width:70%;height:100%;";
 					previousButton.className = "button primary fit";
 					var container = document.getElementById("listButtons");
 					if(setCounter==0){
