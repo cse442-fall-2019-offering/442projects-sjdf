@@ -191,8 +191,10 @@
 
         var request = {
         	location: {lat: 42.880230, lng: -78.878738},
-        	radius: '400',
-        	type: ['game'] };
+        	radius: '4000',
+        	type: ['restaurant'],
+        	fields: ['name', 'formatted_address', 'formatted_phone_number']
+        };
 
         service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, callback);
@@ -202,7 +204,7 @@
       	if(status === google.maps.places.PlacesServiceStatus.OK){
             for(var i = 0; i < results.length; i++){
                var place = results[i];
-               createMarker(results[i]);
+               createMarker(place);
              }
          }
        }
@@ -211,16 +213,20 @@
           var placeLoc = place.geometry.location;
           var marker = new google.maps.Marker({
               map: map,
-              position: placeLoc
+              position: placeLoc,
+              animation: google.maps.Animation.BOUNCE
            });
 
            google.maps.event.addListener(marker, 'click', function() {
-               infowindow.setContent(place.name);
+               infowindow.setContent(place.name + '<br>' + place.rating + ' out of 5 stars');
                infowindow.open(map, this);
-             });
+           });
+           google.maps.event.addListener(marker, 'dblclick', function(){
+               //window.location.href = "landmarks.html";
+           });
  	}
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tSFyIMs47ar_bbqvkE0-epRNZyu7J84&callback=initMap"
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tSFyIMs47ar_bbqvkE0-epRNZyu7J84&libraries=places&callback=initMap"></script>
     async defer></script>
 	</body>
 </html>
