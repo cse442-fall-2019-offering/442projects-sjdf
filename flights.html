@@ -36,6 +36,7 @@
 							<section id="FlightSections">
 								<div class="container">
 									<h1>List of Flights</h1>
+									<div id="switchButton" style ="height:25px"></div>
 									<div class="features" id="listOfFlights"></div>
 									<div id="listButtons" style="height:25px"></div>
 								</div>
@@ -87,31 +88,20 @@
 						var listLocation = document.getElementById("listOfFlights");
 				var setCounter = 0;
 				spawnList(setCounter);
+				//generate the lists in increments of 1
 				var switchButton = document.createElement("button");
-				switchButton.innerHTML = "Reverse order of Price";
-				switchButton.style = "width:70%height:100%;";
-				switchButton.onclick = switchButtonisClicked;
-
-				function switchButtonisClicked(){
-					clearDiv("listofFlights");
-					var newList;
-					var temp = 0;
-					for (i = FlightList.length(); i > 0; i--){
-						newList[temp] = FlightList[i];
-						temp++;
-					}
-					FlightList = newList;
-					setCounter = 0;
-					spawnList(setCounter);
-
-				}
-				//generate the lists in increments of 10
+					switchButton.innerHTML = "Reverse order of Price";
+					switchButton.style = "width:30%height:100%;";
+					switchButton.onclick = switchButtonisClicked;
+					switchButton.className = "button primary fit";
+					var container = document.getElementById("switchButton");
+					container.appendChild(switchButton);
 				if(FlightList.length>10){
 					var nextButton = document.createElement("button");
 					nextButton.innerHTML = "next";
 					nextButton.onclick = nextButtonIsClicked;
 					nextButton.className = "button primary fit";
-					nextButton.style = "width:70%;height:100%;";
+					nextButton.style = "width:20%;height:100%;";
 					var container = document.getElementById("listButtons");
 					container.appendChild(nextButton);
 				}
@@ -120,6 +110,7 @@
 						if(i>(FlightList.length-1)){
 							break;
 						}
+
 						//when clicking on the option it causes the user to go to the next html
 						var article = document.createElement("article");
 						var linkToTourism = document.createElement("a");
@@ -128,7 +119,7 @@
 
 						var divInner = document.createElement("div");
 						divInner.class = "inner";
-						divInner.style = "width:100%";
+						divInner.style = "width:20%";
 						linkToTourism.appendChild(divInner);
 						var divGridContainer = document.createElement("div");
 						divGridContainer.class = "grid-item";
@@ -162,18 +153,20 @@
 						listLocation.appendChild(article);
 					}
 				}
+
+
 				//creates next, and previous buttons
 				function setButtons(){
 					clearDiv("listButtons");
 					var nextButton = document.createElement("button");
 					nextButton.innerHTML = "next";
 					nextButton.onclick = nextButtonIsClicked;
-					nextButton.style = "width:50%;height:100%;";
+					nextButton.style = "width:20%;height:100%;";
 					nextButton.className = "button primary fit";
 					var previousButton = document.createElement("button");
 					previousButton.innerHTML = "previous";
 					previousButton.onclick = previousButtonIsClicked;
-					previousButton.style = "width:70%;height:100%;";
+					previousButton.style = "width:20%;height:100%;";
 					previousButton.className = "button primary fit";
 					var container = document.getElementById("listButtons");
 					if(setCounter==0){
@@ -184,6 +177,20 @@
 						container.appendChild(previousButton);
 						container.appendChild(nextButton);
 					}
+				}
+
+				function switchButtonisClicked(){
+					clearDiv("listOfFlights");
+					var newList = [];
+					var temp = 0;
+					for (var i = FlightList.length - 1; i >= 0; i--){
+						newList.push(FlightList[i]);
+						temp++;
+					}
+					FlightList = newList;
+					setCounter = 0;
+					spawnList(setCounter);
+
 				}
                 //functions that modifed the page after each button is clicked
 				function nextButtonIsClicked() {

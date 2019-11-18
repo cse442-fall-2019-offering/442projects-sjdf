@@ -30,7 +30,7 @@ def index():
 def my_link():
   fl = HermesFlights()
 
-  return fl.getFlightData("BUF-sky", "2019-10-23")
+  return fl.getFlightData("BUF-sky", "2019-12-23")
 
 if __name__ == '__main__':
   app.run(debug=True)
