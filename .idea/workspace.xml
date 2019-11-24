@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/landmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/landmarks.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574103879217</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page.">
+      <created>1574104122780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574104122780</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +146,7 @@
     <MESSAGE value="Added json code to flights.html to get information from the API" />
     <MESSAGE value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
     <MESSAGE value="added google places api to the landmark and hotels page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added google places api to the landmark and hotels page" />
+    <MESSAGE value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
   </component>
 </project>
