@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/flights.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/landmarks.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="442projects-sjdf" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="userStory#52TravelBudget" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,6 +30,7 @@
       </set>
     </option>
   </component>
+  <component name="ProjectId" id="1TkgDrah61ulFxYdnBcYpxl3Ntu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="node.js.detected.package.eslint" value="true" />
@@ -85,7 +92,42 @@
       <option name="project" value="LOCAL" />
       <updated>1571617730908</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added google places api to the landmark and hotels page">
+      <created>1573503101285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573503101285</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="" />
+      <created>1574009404323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574009404323</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added google places api to the landmark and hotels page">
+      <created>1574103879217</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574103879217</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page.">
+      <created>1574104122780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574104122780</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page.">
+      <created>1574621906727</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574621906727</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +152,8 @@
     <MESSAGE value="Added the street view to a number of pages&#10;&#10;Pages:&#10;flights.html&#10;landmarks.html" />
     <MESSAGE value="Added json code to flights.html to get information from the API" />
     <MESSAGE value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
+    <MESSAGE value="added google places api to the landmark and hotels page" />
+    <MESSAGE value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
+    <option name="LAST_COMMIT_MESSAGE" value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
   </component>
 </project>
