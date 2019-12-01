@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page.">
+    <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/flights.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/flights/flights.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/flights/flights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/server/server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +53,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.server (1)">
+    <configuration name="server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hermes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\jafal\PycharmProjects\442projects-sjdf\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hermes" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +100,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.server (1)" />
         <item itemvalue="Python.server" />
       </list>
     </recent_temporary>
@@ -159,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574621906727</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="WebConnectionFrontEndHotfix&#10;Added new more appealing coloring scheme&#10;Sorted flights by price starting at lowest&#10;Changed slogan to one presentation worthy&#10;Added monetary symbol in front of flight price">
+      <created>1575161631341</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575161631341</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,10 +213,11 @@
     <MESSAGE value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
     <MESSAGE value="added google places api to the landmark and hotels page" />
     <MESSAGE value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
-    <option name="LAST_COMMIT_MESSAGE" value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
+    <MESSAGE value="WebConnectionFrontEndHotfix&#10;Added new more appealing coloring scheme&#10;Sorted flights by price starting at lowest&#10;Changed slogan to one presentation worthy&#10;Added monetary symbol in front of flight price" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebConnectionFrontEndHotfix&#10;Added new more appealing coloring scheme&#10;Sorted flights by price starting at lowest&#10;Changed slogan to one presentation worthy&#10;Added monetary symbol in front of flight price" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/442projects_sjdf$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1574632126427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/442projects_sjdf$server.coverage" NAME="server Coverage Results" MODIFIED="1575159270017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/core/server" />
+    <SUITE FILE_PATH="coverage/442projects_sjdf$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1575162993119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/442projects_sjdf$server.coverage" NAME="server Coverage Results" MODIFIED="1575162951365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/core/server" />
   </component>
 </project>

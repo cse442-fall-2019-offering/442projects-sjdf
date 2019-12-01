@@ -18,11 +18,23 @@ def index():
 @app.route('/get-flights/')
 def my_link():
   fl = HermesFlights()
-  return fl.getFlightData("BUF-sky", "2019-11-10")
+  return fl.getFlightData("BUF-sky", "2019-12-06")
 
 @app.route('/menu.html')
 def menu():
     return render_template("menu.html")
+
+@app.route('/flights.html')
+def flights():
+    return render_template("flights.html")
+
+@app.route('/hotels.html')
+def hotels():
+    return render_template("hotels.html")
+
+@app.route('/landmarks.html')
+def landmarks():
+    return render_template("landmarks.html")
 
 
 if __name__ == '__main__':
