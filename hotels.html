@@ -134,8 +134,13 @@
             var init = function() {
                 $("#header").load("staticVars.html", function(){
                      var navbar = document.getElementById("nav").childNodes[1].children;
-                     var v = navbar[1].firstChild;
-                     v.className = "active";
+		 					var v = navbar[1].firstChild;
+							v.className = "active";
+							v.setAttribute("href", "hotels.html");
+							var l = navbar[0].firstChild;
+							l.setAttribute("href", "flights.html");
+							var x = navbar[2].firstChild;
+							x.setAttribute("href", "hotel.html");
                 });
             }
             $(document).ready(init);

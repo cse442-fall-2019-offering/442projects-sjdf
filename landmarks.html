@@ -166,6 +166,10 @@
 							var navbar = document.getElementById("nav").childNodes[1].children;
 		 					var v = navbar[2].firstChild;
 							v.className = "active";
+							v.setAttribute("href", "landmarks.html");
+							var l = navbar[0].firstChild;
+							l.setAttribute("href", "flights.html");
+							l.setAttribute("href", "hotels.html");
 					 });
 				}
 				$(document).ready(init);

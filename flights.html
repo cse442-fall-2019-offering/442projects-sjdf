@@ -72,6 +72,11 @@
 							$.get(menubar.html);
 		 					var v = navbar[0].firstChild;
 							v.className = "active";
+							v.setAttribute("href", "flights.hmtl");
+						    var l = navbar[1].firstChild;
+							l.setAttribute("href", "flights.html");
+							var x = navbar[2].firstChild;
+							x.setAttribute("href", "flights.html");
 					 });
 				}
 				$(document).ready(init);
