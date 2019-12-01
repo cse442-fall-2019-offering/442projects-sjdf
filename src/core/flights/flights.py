@@ -1,5 +1,3 @@
-from amadeus import Client, ResponseError, Location
-from skyscanner.skyscanner import Flights
 import http.client, json
 
 """
@@ -49,6 +47,8 @@ class HermesFlights:
         # print(json_data["Quotes"])
         for flight in json_data["Quotes"]:
            master.append(self.getRelevantFlightInfo(flight, flightID))
+
+        master.sort(key=lambda x:x["Price"])
         return json.dumps(master)
 
     """

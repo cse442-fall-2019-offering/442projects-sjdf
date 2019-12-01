@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from src.core.flights.flights import HermesFlights
-from selenium import webdriver
 import os
 
 """
@@ -30,7 +29,7 @@ def index():
 def my_link():
   fl = HermesFlights()
 
-  return fl.getFlightData("BUF-sky", "2019-12-23")
+  return fl.getFlightData("BUF-sky", "2019-11-26")
 
 if __name__ == '__main__':
   app.run(debug=True)
