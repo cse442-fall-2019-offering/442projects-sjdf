@@ -128,7 +128,7 @@
 						divGridContainer.appendChild(hotelName);
 
 						var price = document.createElement("h3");
-						price.innerHTML = "Price: " + FlightList[i]["Price"];
+						price.innerHTML = "Price: " + "$" + FlightList[i]["Price"];
 						price.align = "right";
 						divGridContainer.appendChild(price);
 
@@ -142,7 +142,7 @@
 						divGridContainer.appendChild(address);
 
 						var depDate = document.createElement("h3");
-						depDate.innerHTML = "Departure Date: " + FlightList[i]["DepartureDate"];
+						depDate.innerHTML = "Departure: " + FlightList[i]["DepartureDate"];
 						depDate.align = "right";
 						divGridContainer.appendChild(depDate);
 
