@@ -62,11 +62,39 @@ function noInvalidDate(){
    }
 
    switch(location){
-            case "France":
+            case "Buffalo":
                break;
-            case "United States of America":
+            case "Atlanta":
                break;
-            case "Canada":
+            case "New York City":
+               break;
+            case "Los Vegas":
+               break;
+            case "Los Angles":
+               break;
+            case "Chicago":
+               break;
+            case "Dallas":
+               break;
+            case "Denver":
+               break;
+            case "San Francisco":
+               break;
+            case "Orlando":
+               break;
+            case "Miami":
+               break;
+            case "Charlotte":
+               break;
+            case "Phoneix":
+               break;
+            case "Boston":
+               break;
+            case "Minneapolis":
+               break;
+            case "Detroit":
+               break;
+            case "Philadelphia":
                break;
             default:
                alert("Not a valid starting location.");

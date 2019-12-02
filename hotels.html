@@ -1,185 +1,276 @@
 <!DOCTYPE HTML>
 <!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	Version 1: Header Last Updated 9/12
+   Read Only by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+   Version 1: Header Last Updated 9/12
 -->
 <html>
 
-	<head>
-		<title>Hermes</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+   <head>
+      <title>Hermes</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <style>
+         #map {
+            height: 500px;
+            width: 100%;
+         }
+         html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+         }
+      </style>
+   </head>
+   <body class="is-preload">
 
-		<!-- Header -->
-			<section id="header"></section>
+      <!-- Header -->
+         <section id="header"></section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<section id="one">
-					<div class="container">
-						<header class="major">
-							<h2>Places to Stay</h2>
-							<p text-align="center">The following places are available for booking, based on your location details.</p>
-						</header>
-					</div>
-				</section>
+      <!-- Wrapper -->
+         <div id="wrapper">
+            <section id="one">
+               <div class="container">
+                  <header class="major">
+                     <h2>Places to Stay</h2>
+                     <p text-align="center">The following places are available for booking, based on your location details.</p>
+                  </header>
+               </div>
+            </section>
 
-				<!-- Main -->
-					<div id="main">
-							<div id = "mapDiv"></div>
-							<section id="HotelSections">
-								<div class="container">
-									<h1>List of Hotels</h1>
-									<div class="features" id="listOfHotels"></div>
-									<div id="listButtons" style="height:25px"></div>
-								</div>
-							</section>
-					</div>
+            <!-- Main -->
+               <div id="main">
+                     <div id = "mapDiv"></div>
+                     <section id="HotelSections">
+                        <div class="container">
+                           <h1>List of Hotels</h1>
+                           <div class="features" id="listOfHotels"></div>
+                           <div id="listButtons" style="height:25px"></div>
+                        </div>
+                     </section>
+               </div>
+               <div id="map"></div>
+            <!-- Footer -->
+               <section id="footer">
+                  <div class="container">
+                     <ul class="copyright">
+                        <li>&copy; SJDF 2019</li><li>CSE 442: Software Engineering</a></li>
+                     </ul>
+                  </div>
+               </section>
+         </div>
+      <!-- Scripts -->
+         <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.scrollex.min.js"></script>
+         <script src="assets/js/jquery.scrolly.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+         <script src="https://d3js.org/d3.v4.min.js"></script>
+         <script>
+            /**
+               * @Author Florebencia Fils-Aime
+               * @Last modified: 11/3/2019
+               * @Description: Use Google Places API for hotels
+               * Place holder hotels are extended stay america hotel buffalo - amherst,
+               * candlewood suites, buffalo, amherst, and doubletree by hilton hotel buffalo
+               * @param
+               */
+                  var map;
+                  var infowindow;
+                  var centerdot;
+                  var service;
+                  function initMap() {
+                         centerdot = new google.maps.LatLng(37.774929, -122.419418);
+                         infowindow = new google.maps.InfoWindow();
+                         map = new google.maps.Map(document.getElementById('map'), {
+                         center: centerdot, zoom: 15});
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; SJDF 2019</li><li>CSE 442: Software Engineering</a></li>
-							</ul>
-						</div>
-					</section>
-			</div>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-				var init = function() {
-					 $("#header").load("staticVars.html", function(){
-							var navbar = document.getElementById("nav").childNodes[1].children;
+                         var request = {
+                         location: centerdot,
+                         radius: '4000',
+                         type: ['hotel']
+                         };
+
+                         service = new google.maps.places.PlacesService(map);
+
+                         service.nearbySearch(request, callback);
+                  }
+
+                  function callback(results, status){
+                         if(status === google.maps.places.PlacesServiceStatus.OK){
+                         for(var i = 0; i < results.length; i++){
+                            var place = results[i];
+                             createMarker(results[i]);
+                         }
+                         }
+                  }
+
+                  function createMarker(place){
+                      var placeLoc = place.geometry.location;
+                      var marker = new google.maps.Marker({
+                        map: map,
+                        position: placeLoc,
+                        animation: google.maps.Animation.BOUNCE
+                      });
+
+                     google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent(place.name + '<br>' + place.rating + ' out of 5 stars');
+                        infowindow.open(map, this);
+                     });
+                     google.maps.event.addListener(marker, 'dblclick', function(){
+                        window.location.href = "landmarks.html";
+                     });
+                  }
+
+            //google.maps.event.addDomListener(infowindow, 'load', initMap);
+           </script>
+          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tSFyIMs47ar_bbqvkE0-epRNZyu7J84&libraries=places&callback=initMap"></script>
+
+         <script>
+            var init = function() {
+                $("#header").load("staticVars.html", function(){
+                     var navbar = document.getElementById("nav").childNodes[1].children;
 		 					var v = navbar[1].firstChild;
 							v.className = "active";
-					 });
-				}
-				$(document).ready(init);
-			</script>
-			<script>
-				// get json from somewhere
-				// var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";
-				// var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";
-				var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";
-				var hotelList = JSON.parse(json).hotelList;
-				var listLocation = document.getElementById("listOfHotels");
-				var setCounter = 0;
-				spawnList(setCounter);
-				if(hotelList.length>10){
-					var nextButton = document.createElement("button");
-					nextButton.innerHTML = "next";
-					nextButton.onclick = nextButtonIsClicked;
-					nextButton.className = "button primary fit";
-					nextButton.style = "width:50%;height:100%;";
-					var container = document.getElementById("listButtons");
-					container.appendChild(nextButton);
-				}
-				function spawnList(start){
-					for(var i = start;i<(start+10);i++){
-						if(i>(hotelList.length-1)){
-							break;
-						}
+							v.setAttribute("href", "hotels.html");
+							var l = navbar[0].firstChild;
+							l.setAttribute("href", "flights.html");
+							var x = navbar[2].firstChild;
+							x.setAttribute("href", "hotel.html");
+                });
+            }
+            $(document).ready(init);
+         </script>
+<!--         <script>-->
+<!--            // get json from somewhere-->
+<!--            // var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";-->
+<!--            // var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";-->
+<!--            var json = "\{\"hotelList\": \[\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Brews and Stews\",\"price\": \"$300\",\"address\": \"Diagon Alley\",\"amenities\": \"?\"\},\{\"hotelName\": \"Railview Hotel\",\"price\": \"$200\",\"address\": \"Cokeworth, England\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\},\{\"hotelName\": \"Swanson Hotel\",\"price\": \"$100\",\"address\": \"Times Square, New York\",\"amenities\": \"?\"\}\]\}";-->
+<!--            var hotelList = JSON.parse(json).hotelList;-->
+<!--            var listLocation = document.getElementById("listOfHotels");-->
+<!--            var setCounter = 0;-->
+<!--            spawnList(setCounter);-->
+<!--            if(hotelList.length>10){-->
+<!--               var nextButton = document.createElement("button");-->
+<!--               nextButton.innerHTML = "next";-->
+<!--               nextButton.onclick = nextButtonIsClicked;-->
+<!--               nextButton.className = "button primary fit";-->
+<!--               nextButton.style = "width:50%;height:100%;";-->
+<!--               var container = document.getElementById("listButtons");-->
+<!--               container.appendChild(nextButton);-->
+<!--            }-->
+<!--            function spawnList(start){-->
+<!--               for(var i = start;i<(start+10);i++){-->
+<!--                  if(i>(hotelList.length-1)){-->
+<!--                     break;-->
+<!--                  }-->
 
-						var article = document.createElement("article");
-						var linkToTourism = document.createElement("a");
-						linkToTourism.href = "landmarks.html";
-						article.appendChild(linkToTourism);
+<!--                  var article = document.createElement("article");-->
+<!--                  var linkToTourism = document.createElement("a");-->
+<!--                  linkToTourism.href = "landmarks.html";-->
+<!--                  article.appendChild(linkToTourism);-->
 
-						var divInner = document.createElement("div");
-						divInner.class = "inner";
-						divInner.style = "width:100%";
-						linkToTourism.appendChild(divInner);
-						var divGridContainer = document.createElement("div");
-						divGridContainer.class = "grid-item";
-						divGridContainer.style = "display: grid;grid-gap: 10px;grid-template-columns: 50% 50%;";
-						divInner.appendChild(divGridContainer);
+<!--                  var divInner = document.createElement("div");-->
+<!--                  divInner.class = "inner";-->
+<!--                  divInner.style = "width:100%";-->
+<!--                  linkToTourism.appendChild(divInner);-->
+<!--                  var divGridContainer = document.createElement("div");-->
+<!--                  divGridContainer.class = "grid-item";-->
+<!--                  divGridContainer.style = "display: grid;grid-gap: 10px;grid-template-columns: 50% 50%;";-->
+<!--                  divInner.appendChild(divGridContainer);-->
 
-						var hotelName = document.createElement("h2");
-						hotelName.innerHTML = hotelList[i].hotelName;
-						divGridContainer.appendChild(hotelName);
+<!--                  var hotelName = document.createElement("h2");-->
+<!--                  hotelName.innerHTML = hotelList[i].hotelName;-->
+<!--                  divGridContainer.appendChild(hotelName);-->
 
-						var price = document.createElement("h3");
-						price.innerHTML = hotelList[i].price;
-						price.align = "right";
-						divGridContainer.appendChild(price);
+<!--                  var price = document.createElement("h3");-->
+<!--                  price.innerHTML = hotelList[i].price;-->
+<!--                  price.align = "right";-->
+<!--                  divGridContainer.appendChild(price);-->
 
-						var address = document.createElement("h3");
-						address.innerHTML = hotelList[i].address;
-						divGridContainer.appendChild(address);
+<!--                  var address = document.createElement("h3");-->
+<!--                  address.innerHTML = hotelList[i].address;-->
+<!--                  divGridContainer.appendChild(address);-->
 
-						var amenities = document.createElement("h3");
-						amenities.innerHTML = hotelList[i].amenities;
-						amenities.align = "right";
-						divGridContainer.appendChild(amenities);
+<!--                  var amenities = document.createElement("h3");-->
+<!--                  amenities.innerHTML = hotelList[i].amenities;-->
+<!--                  amenities.align = "right";-->
+<!--                  divGridContainer.appendChild(amenities);-->
 
-						var mapButton = document.createElement("button");
-						mapButton.onclick = mapButtonOnClick;
-						mapButton.innerHTML = "MAP";
-						mapButton.className = "button primary";
-						article.appendChild(mapButton);
-						listLocation.appendChild(article);
-					}
-				}
+<!--                  var mapButton = document.createElement("button");-->
+<!--                  mapButton.onclick = mapButtonOnClick;-->
+<!--                  mapButton.innerHTML = "MAP";-->
+<!--                  mapButton.className = "button primary";-->
+<!--                  article.appendChild(mapButton);-->
+<!--                  listLocation.appendChild(article);-->
+<!--               }-->
+<!--            }-->
 
-				function setButtons(){
-					clearDiv("listButtons");
-					var nextButton = document.createElement("button");
-					nextButton.innerHTML = "next";
-					nextButton.onclick = nextButtonIsClicked;
-					nextButton.style = "width:50%;height:100%;";
-					nextButton.className = "button primary fit";
-					var previousButton = document.createElement("button");
-					previousButton.innerHTML = "previous";
-					previousButton.onclick = previousButtonIsClicked;
-					previousButton.style = "width:50%;height:100%;";
-					previousButton.className = "button primary fit";
-					var container = document.getElementById("listButtons");
-					if(setCounter==0){
-						container.appendChild(nextButton);
-					}else if((setCounter+10)>=hotelList.length){
-						container.appendChild(previousButton);
-					}else{
-						container.appendChild(previousButton);
-						container.appendChild(nextButton);
-					}
-				}
-				function mapButtonOnClick(){
-					var image = document.createElement("img");
-					image.src = "images/GoogleMapSample.PNG";
-					clearDiv("mapDiv")
-					var location = document.getElementById("mapDiv");
-					location.appendChild(image);
-				}
-				function nextButtonIsClicked() {
-					clearDiv("listOfHotels");
-					setCounter = setCounter+10;
-					spawnList(setCounter);
-					setButtons();
-				}
-				function previousButtonIsClicked() {
-					clearDiv("listOfHotels");
-					setCounter = setCounter-10;
-					spawnList(setCounter);
-					setButtons();
-				}
-				function clearDiv(id){
-					var target = document.getElementById(id);
-					while (target.firstChild) {
-    				target.firstChild.remove();
-					}
-				}
-			</script>
-	</body>
+<!--            function setButtons(){-->
+<!--               clearDiv("listButtons");-->
+<!--               var nextButton = document.createElement("button");-->
+<!--               nextButton.innerHTML = "next";-->
+<!--               nextButton.onclick = nextButtonIsClicked;-->
+<!--               nextButton.style = "width:50%;height:100%;";-->
+<!--               nextButton.className = "button primary fit";-->
+<!--               var previousButton = document.createElement("button");-->
+<!--               previousButton.innerHTML = "previous";-->
+<!--               previousButton.onclick = previousButtonIsClicked;-->
+<!--               previousButton.style = "width:50%;height:100%;";-->
+<!--               previousButton.className = "button primary fit";-->
+<!--               var container = document.getElementById("listButtons");-->
+<!--               if(setCounter==0){-->
+<!--                  container.appendChild(nextButton);-->
+<!--               }else if((setCounter+10)>=hotelList.length){-->
+<!--                  container.appendChild(previousButton);-->
+<!--               }else{-->
+<!--                  container.appendChild(previousButton);-->
+<!--                  container.appendChild(nextButton);-->
+<!--               }-->
+<!--            }-->
+<!--            function mapButtonOnClick(){-->
+<!--               var image = document.createElement("img");-->
+<!--               image.src = "images/GoogleMapSample.PNG";-->
+<!--               clearDiv("mapDiv")-->
+<!--               var location = document.getElementById("mapDiv");-->
+<!--               location.appendChild(image);-->
+<!--            }-->
+<!--            function nextButtonIsClicked() {-->
+<!--               clearDiv("listOfHotels");-->
+<!--               setCounter = setCounter+10;-->
+<!--               spawnList(setCounter);-->
+<!--               setButtons();-->
+<!--            }-->
+<!--            function previousButtonIsClicked() {-->
+<!--               clearDiv("listOfHotels");-->
+<!--               setCounter = setCounter-10;-->
+<!--               spawnList(setCounter);-->
+<!--               setButtons();-->
+<!--            }-->
+<!--            function clearDiv(id){-->
+<!--               var target = document.getElementById(id);-->
+<!--               while (target.firstChild) {-->
+<!--                target.firstChild.remove();-->
+<!--               }-->
+<!--            }-->
+<!--         </script>-->
+<!--      <script type="text/javascript" src="static/js/read-csv.js"></script>-->
+<!--      <input type="file" name="file" value="data/airports.csv" id="csvFileInput" accept=".csv">-->
+<!--      <script>-->
+<!--         var scriptableIO = Components.classes["@mozilla.org/io/scriptable-io;1"]-->
+<!--                             .getService();-->
+<!--         var file = IO.getFileWithPath("data/airports.csv");-->
+<!--         var stream = IO.newInputStream(file, "text");-->
+<!--         var lines = [];-->
+<!--         while(stream.available()){-->
+<!--            lines.push(stream.readLine());-->
+<!--         }-->
+
+<!--   </script>-->
+   </body>
 </html>
+

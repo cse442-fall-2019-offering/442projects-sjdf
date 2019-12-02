@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flights.html" beforeDir="false" afterPath="$PROJECT_DIR$/flights.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/landmarks.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="442projects-sjdf" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="userStory#52TravelBudget" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,8 +31,11 @@
       </set>
     </option>
   </component>
+  <component name="ProjectId" id="1TkgDrah61ulFxYdnBcYpxl3Ntu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +55,58 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Python.server (1)">
+    <configuration name="server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hermes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\jafal\PycharmProjects\442projects-sjdf\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hermes" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\jafal\PycharmProjects\442projects-sjdf\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/core/server" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/core/server/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.server (1)" />
+        <item itemvalue="Python.server" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -85,7 +147,58 @@
       <option name="project" value="LOCAL" />
       <updated>1571617730908</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added google places api to the landmark and hotels page">
+      <created>1573503101285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573503101285</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e833282-c704-48d2-b0f7-7b0629fe914c" name="Default Changelist" comment="" />
+      <created>1574009404323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574009404323</updated>
+      <workItem from="1575236344879" duration="134000" />
+      <workItem from="1575236589519" duration="1791000" />
+    </task>
+    <task id="LOCAL-00007" summary="added google places api to the landmark and hotels page">
+      <created>1574103879217</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574103879217</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page.">
+      <created>1574104122780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574104122780</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page.">
+      <created>1574621906727</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574621906727</updated>
+    </task>
+    <task id="LOCAL-00010" summary="WebConnectionFrontEndHotfix&#10;Added new more appealing coloring scheme&#10;Sorted flights by price starting at lowest&#10;Changed slogan to one presentation worthy&#10;Added monetary symbol in front of flight price">
+      <created>1575161631341</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1575161631341</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed main.js so it can check for correct starting locations">
+      <created>1575237380378</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1575237380378</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +223,14 @@
     <MESSAGE value="Added the street view to a number of pages&#10;&#10;Pages:&#10;flights.html&#10;landmarks.html" />
     <MESSAGE value="Added json code to flights.html to get information from the API" />
     <MESSAGE value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments to parts my parts done during sprint 2 in staticVars.html, flights.html and main.js" />
+    <MESSAGE value="added google places api to the landmark and hotels page" />
+    <MESSAGE value="added the markers for the maps on the hotels and landmarks pages. The markers toggle and double clicking the ones on the hotels page links to the landmarks page." />
+    <MESSAGE value="WebConnectionFrontEndHotfix&#10;Added new more appealing coloring scheme&#10;Sorted flights by price starting at lowest&#10;Changed slogan to one presentation worthy&#10;Added monetary symbol in front of flight price" />
+    <MESSAGE value="Fixed main.js so it can check for correct starting locations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed main.js so it can check for correct starting locations" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/442projects_sjdf$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1575162993119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/442projects_sjdf$server.coverage" NAME="server Coverage Results" MODIFIED="1575162951365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/core/server" />
   </component>
 </project>

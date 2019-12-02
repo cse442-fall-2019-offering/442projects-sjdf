@@ -103,50 +103,65 @@
 					var container = document.getElementById("listButtons");
 					container.appendChild(nextButton);
 				}
+
+
+				function getUrlVars() {
+    				var vars = {};
+					var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        			vars[key] = value;
+					});
+    				return vars;
+				}
+
 				function spawnList(start){
 					for(var i = start;i<(start+10);i++){
 						if(i>(FlightList.length-1)){
 							break;
 						}
-						//when clicking on the option it causes the user to go to the next html
-						var article = document.createElement("article");
-						var linkToTourism = document.createElement("a");
-						linkToTourism.href = "hotels.html";
-						article.appendChild(linkToTourism);
+						console.log(Number(getUrlVars()["limitNum"]))
+						console.log(Number(FlightList[i]["Price"]))
+						if(Number(getUrlVars()["limitNum"]) > Number(FlightList[i]["Price"])) {
 
-						var divInner = document.createElement("div");
-						divInner.class = "inner";
-						divInner.style = "width:100%";
-						linkToTourism.appendChild(divInner);
-						var divGridContainer = document.createElement("div");
-						divGridContainer.class = "grid-item";
-						divGridContainer.style = "display: grid;grid-gap: 10px;grid-template-columns: 50% 50%;";
-						divInner.appendChild(divGridContainer);
+							//when clicking on the option it causes the user to go to the next html
+							var article = document.createElement("article");
+							var linkToTourism = document.createElement("a");
+							linkToTourism.href = "hotels.html";
+							article.appendChild(linkToTourism);
 
-						var hotelName = document.createElement("h2");
-						hotelName.innerHTML = FlightList[i]["Place"];
-						divGridContainer.appendChild(hotelName);
+							var divInner = document.createElement("div");
+							divInner.class = "inner";
+							divInner.style = "width:100%";
+							linkToTourism.appendChild(divInner);
+							var divGridContainer = document.createElement("div");
+							divGridContainer.class = "grid-item";
+							divGridContainer.style = "display: grid;grid-gap: 10px;grid-template-columns: 50% 50%;";
+							divInner.appendChild(divGridContainer);
 
-						var price = document.createElement("h3");
-						price.innerHTML = "Price: " + FlightList[i]["Price"];
-						price.align = "right";
-						divGridContainer.appendChild(price);
+							var hotelName = document.createElement("h2");
+							hotelName.innerHTML = FlightList[i]["Place"];
+							divGridContainer.appendChild(hotelName);
 
-						var address = document.createElement("h3");
+							var price = document.createElement("h3");
+							price.innerHTML = "Price: " + "$" + FlightList[i]["Price"];
+							price.align = "right";
+							divGridContainer.appendChild(price);
 
-						var directFlight = "Yes";
-						if(FlightList[i]["DirectFlight"] == "True")
-							directFlight = "No";
+							var address = document.createElement("h3");
 
-						address.innerHTML = "Direct Flight? " + directFlight;
-						divGridContainer.appendChild(address);
+							var directFlight = "Yes";
+							if (FlightList[i]["DirectFlight"] == "True")
+								directFlight = "No";
 
-						var depDate = document.createElement("h3");
-						depDate.innerHTML = "Departure Date: " + FlightList[i]["DepartureDate"];
-						depDate.align = "right";
-						divGridContainer.appendChild(depDate);
+							address.innerHTML = "Direct Flight? " + directFlight;
+							divGridContainer.appendChild(address);
 
-						listLocation.appendChild(article);
+							var depDate = document.createElement("h3");
+							depDate.innerHTML = "Departure: " + FlightList[i]["DepartureDate"];
+							depDate.align = "right";
+							divGridContainer.appendChild(depDate);
+
+							listLocation.appendChild(article);
+						}
 					}
 				}
 				//creates next, and previous buttons
